@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.MainInfo;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface AutoUpdateManager {
+	
+	MainInfo updateMainInfo();
+
+}

@@ -53,7 +53,6 @@ INDEX VERSION 1.130+C:\Users\juan.salazar\Documents\Projects\workspace\ParkingLo
 1163806838.index
 3780268821.index
 1479661002.index
-1047876520.index
 1937636859.index
 3065053440.index
 2951431056.index

@@ -16,6 +16,7 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import domain.model.MainInfo;
 import domain.model.ParkedVehicle;
 import domain.model.ParkingCell;
 import domain.model.Response;
@@ -123,6 +124,18 @@ public class ParkingLotDaoImpl implements ParkingLotDao {
 			response = new Response(Constants.STATUS_ERROR_SERVER, Constants.STATUS_ERROR_SERVER_MESSAGE);
 		}
 		return response;
+	}
+
+	@Override
+	public List<MainInfo> getMainInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ParkedVehicle> getStatusInfo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

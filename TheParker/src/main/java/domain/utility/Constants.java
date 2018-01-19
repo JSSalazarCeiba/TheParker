@@ -22,6 +22,7 @@ public class Constants {
 	// Vehicle types
 	public static final String CAR = "car";
 	public static final String MOTORCYCLE = "motorcycle";
+	public static final String VEHICLE = "vehicle";
 	
 	// Cell types
 	public static final String CAR_CELL = "CAR_CELL";
@@ -82,6 +83,7 @@ public class Constants {
 	public static final String CARGO_PLATE = "cargo-plate";
 	public static final String MOTORCYCLE_PLATE = "motorcycle-plate";
 	public static final String INVALID_PLATE = "invalid-plate";
+	public static final String FORBIDDEN_PLATE = "forbidden-plate";
 	
 	// Response
 	public static final Integer STATUS_OK = 200;
@@ -89,6 +91,7 @@ public class Constants {
 	public static final Integer STATUS_ERROR_SERVER = 500;
 	public static final String STATUS_OK_MESSAGE = "Ok";
 	public static final String STATUS_OK_PARKING_LOT_FULL_MESSAGE = "Parking lot full";
+	public static final String STATUS_OK_ENTRY_PROHIBITED = "Ingreso prohibido";
 	public static final String STATUS_ERROR_CLIENT_MESSAGE = "Error in client";
 	public static final String STATUS_ERROR_SERVER_MESSAGE = "Error in server";
 	

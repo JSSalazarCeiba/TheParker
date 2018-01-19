@@ -3,6 +3,9 @@
  */
 package domain.manager;
 
+import java.util.List;
+
+import domain.model.MainInfo;
 import domain.model.ParkedVehicle;
 import domain.model.ParkingCell;
 import domain.model.Vehicle;
@@ -26,5 +29,7 @@ public interface ParkingLotManager {
 	 * @return
 	 */
 	ParkedVehicle getVehicle(ParkingCell cell);
+	
+	List<MainInfo> getMainInfo();
 
 }

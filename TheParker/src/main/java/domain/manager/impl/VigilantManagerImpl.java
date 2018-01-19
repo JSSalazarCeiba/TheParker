@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import domain.manager.DataValidatorManager;
 import domain.manager.VigilantManager;
 import domain.model.Car;
 import domain.model.Motorcycle;
@@ -35,6 +36,8 @@ public class VigilantManagerImpl implements VigilantManager {
 	private VigilantDao vigilantDao;
 	@Autowired
 	private ParkingLotDao parkingLotDao;
+	@Autowired
+	private DataValidatorManager dataValidatorManager;
 
 	/*
 	 * (non-Javadoc)
@@ -48,22 +51,24 @@ public class VigilantManagerImpl implements VigilantManager {
 	@Transactional
 	@Override
 	public Response registerVehicleIn(Car car) {
-
-		// Get information about available cells
-		List<ParkingCell> availableCells = getAvailableParkingCells(car);
 		Response response;
-		if (!availableCells.isEmpty()) {
+		// Validate plate
+		if (dataValidatorManager.validateVehicle(car).getValid()) {
+			// Get information about available cells
+			List<ParkingCell> availableCells = getAvailableParkingCells(car);
+			if (!availableCells.isEmpty()) {
+				// Assign a cell and open the entrance and register vehicle in
+				ParkingCell assignedCell = assignCell(availableCells);
+				setEntranceStatus(Constants.OPEN_ENTRANCE);
+				response = vigilantDao.registerVehicleIn(car, assignedCell);
 
-			// Assign a cell and open the entrance and register vehicle in
-			ParkingCell assignedCell = assignCell(availableCells);
-			setEntranceStatus(Constants.OPEN_ENTRANCE);
-			response = vigilantDao.registerVehicleIn(car, assignedCell);
-
+			} else {
+				response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_PARKING_LOT_FULL_MESSAGE);
+			}
 		} else {
-			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_PARKING_LOT_FULL_MESSAGE);
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_ENTRY_PROHIBITED);
 		}
 		return response;
-		
 	}
 
 	/*
@@ -78,18 +83,23 @@ public class VigilantManagerImpl implements VigilantManager {
 	@Transactional
 	@Override
 	public Response registerVehicleIn(Motorcycle motorcycle) {
-		// Get information about available cells
-		List<ParkingCell> availableCells = getAvailableParkingCells(motorcycle);
 		Response response;
-		if (!availableCells.isEmpty()) {
+		// Validate plate
+		if (dataValidatorManager.validateVehicle(motorcycle).getValid()) {
+			// Get information about available cells
+			List<ParkingCell> availableCells = getAvailableParkingCells(motorcycle);
+			if (!availableCells.isEmpty()) {
 
-			// Assign a cell and open the entrance and register vehicle in
-			ParkingCell assignedCell = assignCell(availableCells);
-			setEntranceStatus(Constants.OPEN_ENTRANCE);
-			response = vigilantDao.registerVehicleIn(motorcycle, assignedCell);
+				// Assign a cell and open the entrance and register vehicle in
+				ParkingCell assignedCell = assignCell(availableCells);
+				setEntranceStatus(Constants.OPEN_ENTRANCE);
+				response = vigilantDao.registerVehicleIn(motorcycle, assignedCell);
 
+			} else {
+				response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_PARKING_LOT_FULL_MESSAGE);
+			}
 		} else {
-			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_PARKING_LOT_FULL_MESSAGE);
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_ENTRY_PROHIBITED);
 		}
 		return response;
 	}
@@ -109,14 +119,24 @@ public class VigilantManagerImpl implements VigilantManager {
 		// Get parked vehicle information
 		ParkedVehicle parkedVehicle = parkingLotDao.getVehicle(vehicle);
 		Response response;
+		Response responseOne;
+		Response responseTwo;
+		Response responseThree;
 		
 		/*
 		 * Update the cell status, the parked vehicles information && the vehicle
 		 * registration
 		 */
-		response = updateCellStatus(parkedVehicle);
-		response = updateParkedVehicles(parkedVehicle);
-		response = updateVehicleOut(parkedVehicle);
+		responseOne = updateCellStatus(parkedVehicle);
+		responseTwo = updateParkedVehicles(parkedVehicle);
+		responseThree = updateVehicleOut(parkedVehicle);
+		if (responseOne.getCode().equals(Constants.STATUS_OK) && 
+				responseTwo.getCode().equals(Constants.STATUS_OK) 
+				&& responseThree.getCode().equals(Constants.STATUS_OK)) {
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_MESSAGE);
+		} else {
+			response = new Response(Constants.STATUS_ERROR_SERVER, Constants.STATUS_ERROR_SERVER_MESSAGE);
+		}
 		setExitStatus(Constants.OPEN_EXIT);
 		return response;
 

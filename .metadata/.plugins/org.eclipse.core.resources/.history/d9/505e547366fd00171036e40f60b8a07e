@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import java.util.List;
+
+import domain.model.MainInfo;
+import domain.model.Response;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface AutoUpdateDao {
+	
+	Response updateSummary(MainInfo mainInfo);
+	
+	Integer getCurrentOccupation(String type);
+	
+	List<Long> getMoneyToPay(String type);
+	
+	List<Long> getMoneyPayed(String type);
+
+}

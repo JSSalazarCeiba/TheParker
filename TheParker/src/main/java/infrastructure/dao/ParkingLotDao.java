@@ -6,6 +6,7 @@ package infrastructure.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import domain.model.MainInfo;
 import domain.model.ParkedVehicle;
 import domain.model.ParkingCell;
 import domain.model.Response;
@@ -60,5 +61,19 @@ public interface ParkingLotDao {
 	 * @param parkedVehicle
 	 */
 	Response updateParkedVehicles(ParkedVehicle parkedVehicle);
+	
+	/**
+	 * Method to get the main info used in the main screen of
+	 * the user interface
+	 * @return
+	 */
+	List<MainInfo> getMainInfo();
+	
+	/**
+	 * Method to get the status info used in the status screen of
+	 * the user interface
+	 * @return
+	 */
+	List<ParkedVehicle> getStatusInfo();
 
 }

@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import java.util.List;
+
+import domain.manager.AutoUpdateManager;
+import domain.model.MainInfo;
+import domain.model.ParkedVehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class AutoUpdateManagerImpl implements AutoUpdateManager {
+
+	@Override
+	public MainInfo updateMainInfo() {
+		MainInfo mainInfoCars = getMainInfoCars();
+		MainInfo mainInfoMotorcycles = getmainInfoMotorcycles();
+		return null;
+	}
+
+	@Override
+	public List<ParkedVehicle> updateStatusInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/* PRIVATE METHODS */
+
+	public MainInfo getMainInfoCars() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public MainInfo getmainInfoMotorcycles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public Integer getCurrentOccupation() {
+		return null;
+	}
+	
+	public Integer getMoneyToPay() {
+		return null;
+	}
+	
+	public Integer getMoneyPayed() {
+		return null;
+	}
+
+}

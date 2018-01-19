@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package domain.entity;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class MainInfoEntity {
+
+}

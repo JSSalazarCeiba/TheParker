@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.List;
+
+import infrastructure.dao.AutoUpdateDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class AutoUpdateDaoImpl implements AutoUpdateDao {
+
+	@Override
+	public Integer getCurrentOccupation(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Long> getMoneyToPay(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Long> getMoneyPayed(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

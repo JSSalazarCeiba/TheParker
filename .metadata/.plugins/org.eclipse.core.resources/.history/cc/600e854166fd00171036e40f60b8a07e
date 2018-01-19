@@ -1,0 +1,62 @@
+/**
+ * 
+ */
+package domain.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+/**
+ * Parking Cell Entity
+ * @author juan.salazar
+ *
+ */
+@Entity
+public class ParkingCellEntity implements Serializable {
+	
+	private static final long serialVersionUID = -8796371259282512355L;
+	
+	@Id
+	@Column(name="CODE")
+	private String code;
+	@Column(name="TYPE")
+	private String type;
+	@Column(name="STATUS")
+	private String status;
+	
+	/**
+	 * 
+	 * @param code
+	 * @param type
+	 * @param status
+	 */
+	public ParkingCellEntity(String code, String type, String status) {
+		super();
+		this.code = code;
+		this.type = type;
+		this.status = status;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+}
+

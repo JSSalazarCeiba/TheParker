@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.List;
+
+import domain.model.MainInfo;
+import domain.model.Response;
+import infrastructure.dao.AutoUpdateDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class AutoUpdateDaoImpl implements AutoUpdateDao {
+	
+	public Response updateSummary(MainInfo mainInfo)  {
+		return null;
+	}
+
+	@Override
+	public Integer getCurrentOccupation(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Long> getMoneyToPay(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Long> getMoneyPayed(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

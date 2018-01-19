@@ -167,6 +167,18 @@ public class DataValidatorTest {
 	}
 	
 	@Test
+	public void isAllowedPlateTest() {
+		// Arrange
+		String plate = "RON45C";
+		
+		// Act
+		Boolean isAllowedPlate = dataValidatorManagerImpl.isAllowedPlate(plate);
+		
+		// Assert
+		assertTrue("Is allowedPlate", isAllowedPlate);
+	}
+	
+	@Test
 	public void validateTypeNotNullTest() {
 		// Arrange
 		String vehicleType = "car";
@@ -260,6 +272,30 @@ public class DataValidatorTest {
 		
 		// Assert
 		assertTrue("valid motorcycle cell code", validMotorcycleCellCode);
+	}
+	
+	@Test
+	public void beginsWithLetterATest() {
+		// Arrange
+		String plate = "APL850";
+		
+		// Act
+		Boolean beginsWithA = dataValidatorManagerImpl.beginsWithLetterA(plate);
+		
+		// Assert
+		assertTrue("Plate beggins with A", beginsWithA);
+	}
+	
+	@Test
+	public void beginsWithLetterAFalseTest() {
+		// Arrange
+		String plate = "TOR309";
+		
+		// Act
+		Boolean beginsWithA = dataValidatorManagerImpl.beginsWithLetterA(plate);
+		
+		// Assert
+		assertFalse("Plate beggins with A", beginsWithA);
 	}
 
 }

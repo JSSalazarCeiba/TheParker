@@ -1,0 +1,198 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import domain.manager.DataValidatorManager;
+import domain.manager.VigilantManager;
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Response;
+import domain.model.Vehicle;
+import domain.utility.Constants;
+import infrastructure.dao.ParkingLotDao;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * Implementation of VigilantManager
+ * 
+ * @author juan.salazar
+ *
+ */
+@Service
+public class VigilantManagerImpl implements VigilantManager {
+	
+	@Autowired
+	private VigilantDao vigilantDao;
+	@Autowired
+	private ParkingLotDao parkingLotDao;
+	@Autowired
+	private DataValidatorManager dataValidatorManager;
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see domain.manager.VigilantManager#registerVehicleIn(domain.model.Vehicle)
+	 * 
+	 * Car entrance registration method: 1. Determines if there are available cells
+	 * 2. Assigns a cell 3. Opens the entrance door 4. Registers the vehicle in the
+	 * database 5. Updates cell status
+	 */
+	@Transactional
+	@Override
+	public Response registerVehicleIn(Car car) {
+		
+		// Validate plate
+		if (dataValidatorManager.validateVehicle(car).getValid()) {
+			// Get information about available cells
+			List<ParkingCell> availableCells = getAvailableParkingCells(car);
+			Response response;
+			if (!availableCells.isEmpty()) {
+
+				// Assign a cell and open the entrance and register vehicle in
+				ParkingCell assignedCell = assignCell(availableCells);
+				setEntranceStatus(Constants.OPEN_ENTRANCE);
+				response = vigilantDao.registerVehicleIn(car, assignedCell);
+
+			} else {
+				response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_PARKING_LOT_FULL_MESSAGE);
+			}
+			return response;
+		} else {
+			
+		}
+		
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see domain.manager.VigilantManager#registerVehicleIn(domain.model.Vehicle)
+	 * 
+	 * Motorcycle entrance registration method: 1. Determines if there are available
+	 * cells 2. Assigns a cell 3. Opens the entrance door 4. Registers the vehicle
+	 * in the database 5. Updates cell status
+	 */
+	@Transactional
+	@Override
+	public Response registerVehicleIn(Motorcycle motorcycle) {
+		// Get information about available cells
+		List<ParkingCell> availableCells = getAvailableParkingCells(motorcycle);
+		Response response;
+		if (!availableCells.isEmpty()) {
+
+			// Assign a cell and open the entrance and register vehicle in
+			ParkingCell assignedCell = assignCell(availableCells);
+			setEntranceStatus(Constants.OPEN_ENTRANCE);
+			response = vigilantDao.registerVehicleIn(motorcycle, assignedCell);
+
+		} else {
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_PARKING_LOT_FULL_MESSAGE);
+		}
+		return response;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see domain.manager.VigilantManager#registerVehicleOut(domain.model.Vehicle)
+	 * 
+	 * Vehicle exit registration method: 1. Updates cell status 2. Updates parking
+	 * vehicles 3. Registers vehicle exit 4. Opens the exit door
+	 */
+	@Transactional
+	@Override
+	public Response registerVehicleOut(Vehicle vehicle) {
+
+		// Get parked vehicle information
+		ParkedVehicle parkedVehicle = parkingLotDao.getVehicle(vehicle);
+		Response response;
+		
+		/*
+		 * Update the cell status, the parked vehicles information && the vehicle
+		 * registration
+		 */
+		response = updateCellStatus(parkedVehicle);
+		response = updateParkedVehicles(parkedVehicle);
+		response = updateVehicleOut(parkedVehicle);
+		setExitStatus(Constants.OPEN_EXIT);
+		return response;
+
+	}
+
+	/************************* PRIVATE ******************************/
+
+	/*
+	 * Method to get the list of available cells for the vehicle that wants to enter
+	 * in the parking lot
+	 */
+	public List<ParkingCell> getAvailableParkingCells(Vehicle vehicle) {
+		return parkingLotDao.getAvailableParkingCells(vehicle);
+	}
+
+	/*
+	 * Method that asign a cell to the vehicle
+	 */
+	public ParkingCell assignCell(List<ParkingCell> parkingCells) {
+		Random random = new Random();
+		Integer parkingCell = random.nextInt(parkingCells.size());
+		return parkingCells.get(parkingCell);
+	}
+
+	/*
+	 * Method that controls the opening and closing of the entrance gate
+	 */
+	public void setEntranceStatus(String entranceStatus) {
+		if (entranceStatus.equals(Constants.OPEN_ENTRANCE)) {
+			// open the entrance gate
+		} else if (entranceStatus.equals(Constants.CLOSE_ENTRANCE)) {
+			// close the entrance gate
+		}
+	}
+
+	/*
+	 * Method that controls the opening and closing of the exit gate
+	 */
+	public void setExitStatus(String exitStatus) {
+		if (exitStatus.equals(Constants.OPEN_EXIT)) {
+			// open the exit gate
+		} else if (exitStatus.equals(Constants.CLOSE_EXIT)) {
+			// close the exit gate
+		}
+	}
+
+	/*
+	 * Method that updates the cell status
+	 */
+	@Transactional
+	public Response updateCellStatus(ParkedVehicle parkedVehicle) {
+		return parkingLotDao.updateCellStatus(parkedVehicle.getIdCell(), Constants.FREE);
+	}
+
+	/*
+	 * Method that cleans the parked vehicles when a vehicle leaves the parking lot
+	 */
+	@Transactional
+	public Response updateParkedVehicles(ParkedVehicle parkedVehicle) {
+		return parkingLotDao.updateParkedVehicles(parkedVehicle);
+	}
+
+	/*
+	 * Method that completes the vehicle registration information
+	 */
+	@Transactional
+	public Response updateVehicleOut(ParkedVehicle parkedVehicle) {
+		return vigilantDao.updateParkingRegistration(new Date(), parkedVehicle, Constants.INACTIVE);
+	}
+
+}

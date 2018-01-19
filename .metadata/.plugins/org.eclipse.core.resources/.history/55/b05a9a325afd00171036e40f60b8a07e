@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package domain.model;
+
+import javax.persistence.Entity;
+
+/**
+ * @author juan.salazar
+ *
+ */
+@Entity
+public class MainInfo {
+	
+	private String type;
+	private Integer currentOcuppation;
+	private Integer totalCapacity;
+	private Long toPay;
+	private Long payed;
+
+}

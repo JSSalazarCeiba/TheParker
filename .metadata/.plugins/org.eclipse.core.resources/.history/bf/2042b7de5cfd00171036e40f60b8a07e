@@ -1,0 +1,63 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import domain.manager.AutoUpdateManager;
+import domain.model.MainInfo;
+import domain.model.ParkedVehicle;
+import infrastructure.dao.AutoUpdateDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+@Service
+public class AutoUpdateManagerImpl implements AutoUpdateManager {
+	
+	@Autowired
+	AutoUpdateDao autoUpdateDao;
+
+	@Override
+	public MainInfo updateMainInfo() {
+		MainInfo mainInfoCars = getMainInfoCars();
+		MainInfo mainInfoMotorcycles = getMainInfoMotorcycles();
+		return null;
+	}
+
+	@Override
+	public List<ParkedVehicle> updateStatusInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/* PRIVATE METHODS */
+
+	public MainInfo getMainInfoCars() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public MainInfo getMainInfoMotorcycles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public Integer getCurrentOccupation(String type) {
+		return autoUpdateDao.getCurrentOccupation(String type);
+	}
+	
+	public Integer getMoneyToPay(String type) {
+		return null;
+	}
+	
+	public Integer getMoneyPayed(String type) {
+		return null;
+	}
+
+}

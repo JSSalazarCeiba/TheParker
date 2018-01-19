@@ -3,6 +3,9 @@
  */
 package domain.manager.impl;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.stereotype.Service;
 
 import domain.manager.DataValidatorManager;
@@ -35,7 +38,7 @@ public class DataValidatorManagerImpl implements DataValidatorManager {
 		String type = car.getType();
 		if (validatePlateNotNull(plate) && validateTypeNotNull(type)) {
 			String plateType = getPlateType(car);
-			if (!plateType.equals(Constants.INVALID_PLATE)) {
+			if (!plateType.equals(Constants.INVALID_PLATE) && !plateType.equals(Constants.FORBIDDEN_PLATE)) {
 				carPlate = new Plate(plate, plateType, true);
 			} else {
 				carPlate = new Plate(plate, plateType, false);
@@ -138,6 +141,10 @@ public class DataValidatorManagerImpl implements DataValidatorManager {
 		} else {
 			type = Constants.INVALID_PLATE;
 		}
+		// Check if plate begins with A and it is Monday or Sunday
+		if (!isAllowedPlate(plate)) {
+			type = Constants.FORBIDDEN_PLATE;
+		}
 		return type;
 	}
 	
@@ -181,6 +188,20 @@ public class DataValidatorManagerImpl implements DataValidatorManager {
 	 */
 	public Boolean isMotorcyclePlate(String plate) {
 		return plate.matches(Constants.REGEX_MOTORCYCLE_PLATE);
+	}
+	
+	/*
+	 * Method to determine if the plate can enter in the parking lot
+	 */
+	public Boolean isAllowedPlate(String plate) {
+		Boolean plateAllowed = true;
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		Integer day = calendar.get(Calendar.DAY_OF_WEEK);
+		if (day == 0 || day == 1) {
+			plateAllowed = !beginsWithLetterA(plate);
+		}
+		return plateAllowed;
 	}
 	
 	/*
@@ -277,6 +298,17 @@ public class DataValidatorManagerImpl implements DataValidatorManager {
 	 */
 	public Boolean validateMotorcycleCellCode(String cellCode) {
 		return cellCode.matches(Constants.REGEX_MOTORCYCLE_CELL);
+	}
+	
+	/*
+	 * Validates if the plate begins with the character 'A'
+	 */
+	public Boolean beginsWithLetterA(String plate) {
+		Boolean beginsWithA = false;
+		if (plate.charAt(0) == 'A') {
+			beginsWithA = true;
+		}
+		return beginsWithA;
 	}
 
 }

@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import java.util.List;
+
+import domain.model.MainInfo;
+import domain.model.ParkedVehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface AutoUpdateManager {
+	
+	Response updateMainInfo();
+	
+	List<ParkedVehicle> updateStatusInfo();
+
+}

@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Parking Cell Entity
@@ -15,6 +16,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@Table(name="ParkingCell")
 public class ParkingCellEntity implements Serializable {
 	
 	private static final long serialVersionUID = -8796371259282512355L;

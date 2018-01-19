@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package domain;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface AutoUpdateManager {
+
+}

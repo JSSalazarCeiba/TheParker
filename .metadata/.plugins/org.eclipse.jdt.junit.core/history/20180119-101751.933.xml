@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DataValidatorTest" project="TheParker" tests="19" started="19" failures="0" errors="0" ignored="0">
+  <testsuite name="domain.manager.DataValidatorTest" time="0.001">
+    <testcase name="validateTypeNotNullTest" classname="domain.manager.DataValidatorTest" time="0.001"/>
+    <testcase name="validateCellTypeTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateVehicleCarTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validatePlateLengthTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="isCargoPlateTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validatePlateNotNullTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="getPlateTypeCarTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateCellStatusTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateMotorcycleCellCode" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="isRegularPlateTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateCcRealValueTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="isMotorcyclePlateTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateCcNotNullTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateCarCellCodeTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateParkingCellTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="isDiplomaticPlateTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateVehicleMotorcycleTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="getPlateTypeMotorcycleTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+    <testcase name="validateCellCodeTest" classname="domain.manager.DataValidatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

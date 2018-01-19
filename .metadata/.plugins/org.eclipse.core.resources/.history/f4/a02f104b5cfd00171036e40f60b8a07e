@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface AutoUpdateDao {
+	
+	Integer getCurrentOccupation();
+	
+	Long getMoneyToPay();
+	
+	Long getMoneyPayed();
+
+}

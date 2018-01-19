@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Parked Vehicle Entity
@@ -15,6 +16,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@Table(name="ParkedVehicles")
 public class ParkedVehicleEntity implements Serializable {
 	
 	private static final long serialVersionUID = -2656013853162272589L;

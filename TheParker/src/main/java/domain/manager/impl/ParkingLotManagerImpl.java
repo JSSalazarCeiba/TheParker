@@ -3,10 +3,13 @@
  */
 package domain.manager.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import domain.manager.ParkingLotManager;
+import domain.model.MainInfo;
 import domain.model.ParkedVehicle;
 import domain.model.ParkingCell;
 import domain.model.Vehicle;
@@ -30,6 +33,11 @@ public class ParkingLotManagerImpl implements ParkingLotManager {
 	@Override
 	public ParkedVehicle getVehicle(ParkingCell cell) {
 		return parkingLotDao.getVehicle(cell);
+	}
+
+	@Override
+	public List<MainInfo> getMainInfo() {
+		return parkingLotDao.getMainInfo();
 	}
 
 }

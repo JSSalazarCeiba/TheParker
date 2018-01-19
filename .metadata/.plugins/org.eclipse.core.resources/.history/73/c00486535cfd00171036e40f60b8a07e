@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import infrastructure.dao.AutoUpdateDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class AutoUpdateDaoImpl implements AutoUpdateDao {
+
+	@Override
+	public Integer getCurrentOccupation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long getMoneyToPay() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long getMoneyPayed() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

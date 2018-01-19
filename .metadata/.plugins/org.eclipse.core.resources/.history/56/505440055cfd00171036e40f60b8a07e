@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import infrastructure.dao.AutoUpdateDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class AutoUpdateDaoImpl implements AutoUpdateDao {
+
+}
