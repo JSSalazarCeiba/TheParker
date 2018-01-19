@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillDaoImpl {
+
+}

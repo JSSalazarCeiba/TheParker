@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+import domain.model.Car;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class CarDataBuilder extends VehicleDataBuilder {
+
+	/**
+	 * 
+	 */
+	public CarDataBuilder() {
+		super();
+	}
+	
+	public Car build() {
+		return new Car();
+	}
+
+}

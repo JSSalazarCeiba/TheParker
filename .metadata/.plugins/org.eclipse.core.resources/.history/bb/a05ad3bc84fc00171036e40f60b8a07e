@@ -1,0 +1,109 @@
+/**
+ * 
+ */
+package domain.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.TableGenerator;
+
+import domain.model.Vehicle;
+
+/**
+ * Vehicle record entity
+ * @author juan.salazar
+ *
+ */
+@Entity
+public class VehicleRecordEntity implements Serializable {
+	
+	private static final long serialVersionUID = -3821326393751032031L;
+	
+	private Long id;
+	private Vehicle vehicle;
+	private Integer cc;
+	private Date timeIn;
+	private Date timeOut;
+	private Long fee;
+	private Boolean active;
+	
+	public VehicleRecordEntity(Long id, Vehicle vehicle, Integer cc, Date timeIn, Date timeOut, Long fee, Boolean active) {
+		super();
+		this.id = id;
+		this.vehicle = vehicle;
+		this.cc = cc;
+		this.timeIn = timeIn;
+		this.timeOut = timeOut;
+		this.fee = fee;
+		this.active = active;
+	}
+	
+	@Id
+	@TableGenerator(name="idBill", table="idBillPK", 
+			pkColumnName="idBillColumn", pkColumnValue="idBillValue",
+			allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.TABLE, generator="idBill")
+	@Column(name="ID")
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public Integer getCc() {
+		return cc;
+	}
+
+	public void setCc(Integer cc) {
+		this.cc = cc;
+	}
+
+	public Date getTimeIn() {
+		return timeIn;
+	}
+
+	public void setTimeIn(Date timeIn) {
+		this.timeIn = timeIn;
+	}
+
+	public Date getTimeOut() {
+		return timeOut;
+	}
+
+	public void setTimeOut(Date timeOut) {
+		this.timeOut = timeOut;
+	}
+
+	public Long getFee() {
+		return fee;
+	}
+
+	public void setFee(Long fee) {
+		this.fee = fee;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+}

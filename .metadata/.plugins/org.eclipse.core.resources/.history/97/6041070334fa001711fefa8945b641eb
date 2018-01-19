@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLot {
+	
+	String vigilant;
+	Boolean entranceOpened;
+	Boolean exitOpened;
+	ParkingCell parkingCell;
+	
+	public ParkingLot(String vigilant, Boolean entranceOpened, Boolean exitOpened, ParkingCell parkingCell) {
+		super();
+		this.vigilant = vigilant;
+		this.entranceOpened = entranceOpened;
+		this.exitOpened = exitOpened;
+		this.parkingCell = parkingCell;
+	}
+	
+	
+
+}

@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import domain.model.Bill;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface BillDao {
+	
+	void registerBill(Bill bill);
+
+}

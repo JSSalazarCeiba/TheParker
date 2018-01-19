@@ -1,0 +1,61 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.List;
+
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import domain.model.VehicleRecord;
+import infrastructure.dao.ParkingLotDao;
+
+/**
+ * Implementation of the interface ParkingLotDao
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotDaoImpl implements ParkingLotDao {
+	
+	/*
+	 * Method 
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#getVehicle(domain.model.Vehicle)
+	 */
+	@Override
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return null;
+	}
+
+	@Override
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ParkingCell> getAvailableParkingCells(Vehicle vehicle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public VehicleRecord getVehicleRecord(Vehicle vehicle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateCellStatus(String idCell, String status) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateParkedVehicles(ParkedVehicle parkedVehicle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

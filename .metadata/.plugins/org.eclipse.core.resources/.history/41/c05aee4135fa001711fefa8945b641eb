@@ -1,0 +1,12 @@
+package domain.model;
+
+import java.util.Date;
+
+public class Fee {
+	
+	private Vehicle vehicle;
+	private Date timeIn;
+	private Date timeOut;
+	private Long totalFee;
+
+}

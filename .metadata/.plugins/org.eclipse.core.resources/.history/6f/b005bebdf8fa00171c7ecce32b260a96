@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * Class to handle Vigilant's job
+ * @author juan.salazar
+ *
+ */
+public interface VigilantManager {
+	
+	/**
+	 * Method to register the cars that enter into the parking lot
+	 * @param vehicle
+	 */
+	void registerVehicleIn(Car vehicle);
+	
+	/**
+	 * Method to register the motorcycles that enter into the parking lot
+	 * @param vehicle
+	 */
+	void registerVehicleIn(Motorcycle vehicle);
+	
+	/**
+	 * Method to register the vehicles that leave the parking lot
+	 * @param vehicle
+	 */
+	void registerVehicleOut(Vehicle vehicle);
+	
+}

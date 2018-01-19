@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface BillManager {
+	
+	Bill generateBill(Vehicle vehicle);
+	
+	ParkedVehicle getParkingInfo(Vehicle vehicle);
+	
+	void registerVehicleExit(Vehicle vehicle);
+
+}

@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package infrastructure.driver;
+
+import java.sql.*;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Driver {
+
+}

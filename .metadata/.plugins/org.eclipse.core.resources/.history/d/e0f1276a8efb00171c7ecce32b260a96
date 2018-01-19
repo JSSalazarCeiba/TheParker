@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Plate {
+
+}

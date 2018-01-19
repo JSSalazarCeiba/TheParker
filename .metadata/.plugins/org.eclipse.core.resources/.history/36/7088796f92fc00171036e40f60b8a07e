@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+package web.service;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+@RestController
+@RequestMapping(value="/rest/vigilant")
+public class VigilantService {
+	
+	@PostMapping(path="/carin", consumes="application/json")
+	public void registerVehicleIn(Car vehicle) {
+		
+	}
+	
+	@PostMapping(path="/motorcyclein", consumes="application/json")
+	public void registerVehicleIn(Motorcycle vehicle) {
+		
+	}
+	
+	@PostMapping(path="/generateBill", consumes="application/json")
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package domain.utility;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Queries {
+	
+	public static final String updateParkingCell = "UPDATE PARKINGCELL SET STATUS = ?1 WHERE CODE = ?2";
+
+}

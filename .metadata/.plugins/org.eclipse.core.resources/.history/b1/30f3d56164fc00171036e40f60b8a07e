@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package infrastructure.driver;
+
+import java.sql.*;
+import java.util.Properties;
+
+/**
+ * Class to handle database connection
+ * @author juan.salazar
+ *
+ */
+public class Driver {
+	
+	public static void main(String[] args) {
+		
+		InputStream input = null;
+		
+		try {
+			// Get a connection to database
+			String url;
+			String user;
+			String password;
+			Connection connection = DriverManager.getConnection(url, user, password)
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

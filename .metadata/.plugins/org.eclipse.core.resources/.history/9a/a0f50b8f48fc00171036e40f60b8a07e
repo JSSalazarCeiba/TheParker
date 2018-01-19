@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.List;
+
+import domain.model.VehicleRecord;
+import infrastructure.dao.FeeCalculatorTaskDao;
+
+/**
+ * Implementation of the class FeeCalculatorTaskDao
+ * @author juan.salazar
+ *
+ */
+public class FeeCalculatorTaskDaoImpl implements FeeCalculatorTaskDao {
+
+	/*
+	 * Get the list of the active parked vehicles in the parking lot
+	 * 
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.FeeCalculatorTaskDao#getActiveVehicleRecord()
+	 */
+	@Override
+	public List<VehicleRecord> getActiveVehicleRecord() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

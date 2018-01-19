@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="domain.manager.VigilantManager"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="domain.manager.BillManager"/>
+<fullyQualifiedTypeName name="infrastructure.dao.VigilantDao"/>
+<fullyQualifiedTypeName name="infrastructure.dao.ParkingLotDao"/>
+<fullyQualifiedTypeName name="domain.task.FeeCalculatorTask"/>
+<fullyQualifiedTypeName name="infrastructure.dao.FeeCalculatorTaskDao"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="infrastructure.dao.BillDao"/>
+<fullyQualifiedTypeName name="infrastructure.dao.BillingDao"/>
+<fullyQualifiedTypeName name="domain.utility.Constants"/>
+<fullyQualifiedTypeName name="domain.manager.impl.VigilantManagerImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="domain.manager.impl.DataValidatorManagerImpl"/>
+<fullyQualifiedTypeName name="domain.model.Plate"/>
+<fullyQualifiedTypeName name="domain.model.Motorcycle"/>
+<fullyQualifiedTypeName name="testDataBuilder.MotorcycleDataBuilder"/>
+<fullyQualifiedTypeName name="domain.model.ParkingCell"/>
+<fullyQualifiedTypeName name="testDataBuilder.ParkingCellDataBuilder"/>
+<fullyQualifiedTypeName name="domain.manager.impl.BillingManagerImpl"/>
+<fullyQualifiedTypeName name="domain.model.Car"/>
+<fullyQualifiedTypeName name="testDataBuilder.CarDataBuilder"/>
+<fullyQualifiedTypeName name="domain.model.Bill"/>
+<fullyQualifiedTypeName name="testDataBuilder.VehicleDataBuilder"/>
+<fullyQualifiedTypeName name="domain.model.Vehicle"/>
+<fullyQualifiedTypeName name="domain.model.ParkedVehicle"/>
+<fullyQualifiedTypeName name="testDataBuilder.ParkedVehicleDataBuilder"/>
+<fullyQualifiedTypeName name="domain.model.VehicleRecord"/>
+<fullyQualifiedTypeName name="testDataBuilder.VehicleRecordDataBuilder"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+</qualifiedTypeNameHistroy>

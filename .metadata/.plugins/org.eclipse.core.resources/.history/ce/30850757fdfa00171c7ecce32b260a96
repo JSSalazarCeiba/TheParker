@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import java.util.List;
+
+import domain.model.VehicleRecord;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface FeeCalculatorTaskDao {
+	
+	List<VehicleRecord> getActiveVehicleRecord();
+
+}

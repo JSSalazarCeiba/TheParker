@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import domain.model.Bill;
+import infrastructure.dao.BillingDao;
+
+/**
+ * Implementation of the interface BillingDao
+ * @author juan.salazar
+ *
+ */
+public class BillingDaoImpl implements BillingDao {
+
+	/*
+	 * Bill registration method: Saves the generated bill in
+	 * the tablle BILLS
+	 * 
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.BillingDao#registerBill(domain.model.Bill)
+	 */
+	@Override
+	public void createBill(Bill bill) {
+		
+	}
+
+}

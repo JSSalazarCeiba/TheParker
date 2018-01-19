@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import java.util.List;
+
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface ParkingLotDao {
+	
+ParkedVehicle getVehicle(Vehicle vehicle);
+	
+	ParkedVehicle getVehicle(ParkingCell cell);
+	
+	List<ParkingCell> getAvailableParkingCells(Vehicle vehicle);
+
+}

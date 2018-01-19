@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Vigilant {
+	
+	public String identifyVehicle() {
+		return null;
+	}
+
+}

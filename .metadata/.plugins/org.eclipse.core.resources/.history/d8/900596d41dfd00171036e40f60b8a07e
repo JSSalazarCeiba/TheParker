@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import java.util.Date;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * Interface to handle vigilant database operations
+ * @author juan.salazar
+ *
+ */
+public interface VigilantDao {
+	
+	/**
+	 * Method to register cars that enter into the parking lot
+	 * @param vehicle
+	 * @param parkingCell
+	 */
+	Response registerVehicleIn(Car vehicle, ParkingCell parkingCell);
+	
+	/**
+	 * Method to register motorcycles that enter into the parking lot
+	 * @param vehicle
+	 * @param parkingCell
+	 */
+	Response registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell);
+	
+	/**
+	 * Method to update the registration record of vehicles that leave
+	 * the parking lot
+	 * @param timeOut
+	 * @param fee
+	 * @param active
+	 */
+	Response updateParkingRegistration(Date timeOut, ParkedVehicle parkedVehicle, String active);
+
+}

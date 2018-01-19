@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package domain.utility;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Constants {
+	
+	private static final Integer MIN_CAR_CELL = 1;
+	private static final Integer MAX_CAR_CELL = 20;
+	private static final Integer MIN_MOTORCYCLE_CELL = 1;
+	private static final Integer MAX_MOTORCYCLE_CELL = 10;
+
+}

@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.Date;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantDaoImpl implements VigilantDao {
+
+	@Override
+	public void registerVehicleIn(Car vehicle, ParkingCell parkingCell) {
+		
+	}
+	
+	@Override
+	public void registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell) {
+		
+	}
+
+	@Override
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+
+	@Override
+	public void updateParkingRegistration(Date timeOut, Long fee, String active) {
+		
+	}
+
+}

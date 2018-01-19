@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Vigilant {
+	
+	public void registerVehicleIn() {
+		
+	}
+	
+	public void registerVehicleOut() {
+		
+	}
+	
+	public void getVehicle() {
+		
+	}
+	
+	private String identifyVehicle() {
+		return null;
+	}
+	
+	private Integer getAvailability() {
+		return null;
+	}
+	
+	private void setEntranceStatus() {
+		
+	}
+	
+	private void setExitStatus() {
+		
+	}
+
+}

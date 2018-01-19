@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface VigilantManager {
+	
+	void registerVehicleIn();
+	
+	void registerVehicleOut();
+	
+	ParkedVehicle getVehicle();
+	
+	Bill generatePayment();
+	
+	String identifyVehicle();
+	
+	Integer getAvailability();
+	
+	void setEntranceStatus();
+	
+	void setExitStatus();
+
+}

@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Vigilant {
+	
+	public void registerVehicleIn(Vehicle vehicle) {
+		
+	}
+	
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+	
+	public ParkedVehicle getVehicle() {
+		return null;
+	}
+	
+	public Bill generatePayment() {
+		return null;
+	}
+
+}

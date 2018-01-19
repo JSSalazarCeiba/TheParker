@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VehicleDataBuilder {
+	
+	private String plate;
+	private String type;
+
+}

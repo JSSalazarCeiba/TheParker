@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package infrastructure.driver;
+
+import java.sql.*;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Driver {
+	
+	public static void main(String[] args) {
+		
+		try {
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

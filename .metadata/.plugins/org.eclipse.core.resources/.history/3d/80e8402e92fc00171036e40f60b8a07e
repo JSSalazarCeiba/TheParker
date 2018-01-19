@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package web.service;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+@RestController
+@RequestMapping(value="/rest/parkinglot")
+public class ParkingLotService {
+	
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return null;
+	}
+	
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		return null;
+	}
+
+}

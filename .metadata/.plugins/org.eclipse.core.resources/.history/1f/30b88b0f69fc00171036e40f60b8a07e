@@ -1,0 +1,102 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import domain.model.VehicleRecord;
+import infrastructure.dao.ParkingLotDao;
+import infrastructure.driver.Driver;
+
+/**
+ * Implementation of the interface ParkingLotDao
+ * @author juan.salazar
+ *
+ */
+@Repository
+public class ParkingLotDaoImpl implements ParkingLotDao {
+	
+	/*
+	 * Method to get a parked vehicle's information by plate and type
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#getVehicle(domain.model.Vehicle)
+	 */
+	@Override
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		Connection connection = Driver.getConnection();
+		Statement statement = Driver.getStatement(connection);
+		ParkedVehicle vehicle;
+		
+		ResultSet result; 
+		try {
+			result = statement.executeQuery("");
+			while (result.next()) {
+				vehicle = result.
+			}
+		} catch (SQLException e) {
+			
+		}
+		return null;
+	}
+	
+	/*
+	 * Method to get a parked vehicle's information by cell
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#getVehicle(domain.model.ParkingCell)
+	 */
+	@Override
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		return null;
+	}
+	
+	/*
+	 * Method to get the list of available parking cells by type
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#getAvailableParkingCells(domain.model.Vehicle)
+	 */
+	@Override
+	public List<ParkingCell> getAvailableParkingCells(Vehicle vehicle) {
+		return null;
+	}
+	
+	/*
+	 * Method to get a vehicle's record
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#getVehicleRecord(domain.model.Vehicle)
+	 */
+	@Override
+	public VehicleRecord getVehicleRecord(Vehicle vehicle) {
+		return null;
+	}
+	
+	/*
+	 * Method to update the PARKING_CELL table
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#updateCellStatus(java.lang.String, java.lang.String)
+	 */
+	@Override
+	public void updateCellStatus(String idCell, String status) {
+		
+	}
+	
+	/*
+	 * Method to update the PARKED_VEHICLES table
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.ParkingLotDao#updateParkedVehicles(domain.model.ParkedVehicle)
+	 */
+	@Override
+	public void updateParkedVehicles(ParkedVehicle parkedVehicle) {
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+
+½squid:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸…£Åùÿÿÿÿ8ƒ‹„Ş,HÓRCRITICALZ
+CODE_SMELL
+¸squid:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÊß8ƒ‹„Ş,HÔRCRITICALZ
+CODE_SMELL
+½squid:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ùÔÉöúÿÿÿÿ8µÛ ‚,HÕRCRITICALZ
+CODE_SMELL
+·squid:S1186>"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¬¿G8ÔÇ‰„,HÖRCRITICALZ
+CODE_SMELL
+bsquid:S1068".Remove this unused "dataSource" private field.(â–ŠĞ8¸ŒË²,H×RMAJORZ
+CODE_SMELL

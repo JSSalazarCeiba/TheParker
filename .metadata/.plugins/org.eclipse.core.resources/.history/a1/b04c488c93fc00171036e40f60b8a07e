@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package web.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import domain.manager.VigilantManager;
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+@RestController
+@RequestMapping(value="/rest/vigilant")
+public class VigilantService {
+	
+	@Autowired
+	VigilantManager vigilantManager;
+	
+	@PostMapping(path="/carIn", consumes="application/json")
+	public void registerVehicleIn(Car vehicle) {
+		try {
+			vigilantManager.registerVehicleIn(vehicle);
+		} catch(Exception e) {
+			
+		}
+	}
+	
+	@PostMapping(path="/motorcycleIn", consumes="application/json")
+	public void registerVehicleIn(Motorcycle vehicle) {
+		
+	}
+	
+	@PostMapping(path="/vehicleOut", consumes="application/json")
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+
+}

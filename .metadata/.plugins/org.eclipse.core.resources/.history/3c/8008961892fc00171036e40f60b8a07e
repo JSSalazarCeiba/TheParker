@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package web.service;
+
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+@RestController
+@RequestMapping(value="/parkinglot")
+public class ParkingLotService {
+	
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return null;
+	}
+	
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		return null;
+	}
+
+}

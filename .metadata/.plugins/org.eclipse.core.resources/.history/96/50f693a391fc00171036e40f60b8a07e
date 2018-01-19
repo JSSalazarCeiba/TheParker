@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package web.service;
+
+import domain.model.Bill;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillingService {
+	
+	public Bill generateBill(Vehicle vehicle) {
+		return null;
+	}
+
+}

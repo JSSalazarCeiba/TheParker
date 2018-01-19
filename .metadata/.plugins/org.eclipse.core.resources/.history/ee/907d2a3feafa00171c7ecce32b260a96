@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ * Class to generate Bills
+ *
+ */
+public interface BillManager {
+	
+	/**
+	 * Bill generator
+	 * 
+	 * @param vehicle
+	 * @return
+	 */
+	Bill generateBill(Vehicle vehicle);
+
+}

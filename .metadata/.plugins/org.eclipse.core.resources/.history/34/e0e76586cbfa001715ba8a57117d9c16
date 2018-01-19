@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.BillManager;
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillManagerImpl implements BillManager {
+
+	@Override
+	public Bill generateBill(Vehicle vehicle) {
+		
+		return null;
+	}
+	
+	private ParkedVehicle getParkingInfo(Vehicle vehicle) {
+		return null;
+	}
+	
+	private void registerVehicleExit(Vehicle vehicle) {
+		
+	}
+
+}

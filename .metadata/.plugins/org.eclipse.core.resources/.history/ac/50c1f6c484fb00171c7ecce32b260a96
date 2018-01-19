@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface DataValidator {
+	
+	Boolean validVehicle(Vehicle vehicle);
+
+}

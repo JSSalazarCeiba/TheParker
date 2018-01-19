@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.BillManager;
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+import domain.model.VehicleRecord;
+import infrastructure.dao.ParkingLotDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillManagerImpl implements BillManager {
+	
+	ParkingLotDao parkingLotDao;
+
+	@Override
+	public Bill generateBill(Vehicle vehicle) {
+		
+		// Get parking information to get time and debt
+		ParkedVehicle parkedVehicle = getParkingInfo(vehicle);
+		
+		// Get vehicle record
+		VehicleRecord vehicleRecord = getVehicleRecord(vehicle);
+		
+		// Generate the bill
+		return generateBill(parkedVehicle, vehicleRecord);
+	}
+	
+	private ParkedVehicle getParkingInfo(Vehicle vehicle) {
+		return parkingLotDao.getVehicle(vehicle);
+	}
+	
+	private VehicleRecord getVehicleRecord(Vehicle vehicle) {
+		return parkingLotDao.getVehicleRecord(vehicle);
+	}
+	
+	private Bill generateBill(ParkedVehicle vehicle, VehicleRecord record) {
+		Bill bill = new Bill();
+		return null;
+	}
+
+}

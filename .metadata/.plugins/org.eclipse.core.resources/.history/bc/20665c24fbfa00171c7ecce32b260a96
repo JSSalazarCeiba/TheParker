@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+package domain.task;
+
+/**
+ * Fee calculator task class
+ * @author juan.salazar
+ *
+ */
+public interface FeeCalculatorTask {
+	
+	Long calculateChargedFee();
+
+}

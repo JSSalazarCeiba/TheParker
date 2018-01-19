@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import domain.model.Bill;
+import infrastructure.dao.BillingDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillingDaoImpl implements BillingDao {
+
+	@Override
+	public void registerBill(Bill bill) {
+		
+	}
+
+}

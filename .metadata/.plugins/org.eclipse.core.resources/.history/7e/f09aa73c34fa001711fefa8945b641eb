@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Vehicle {
+	
+	String plate;
+	String type;
+	
+	public Vehicle(String plate, String type) {
+		super();
+		this.plate = plate;
+		this.type = type;
+	}
+	
+}

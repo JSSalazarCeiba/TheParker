@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class PlateDataBuilder {
+	
+	private String plateCode;
+	private String plateType;
+	private Boolean valid;
+	/**
+	 * 
+	 */
+	public PlateDataBuilder() {
+		super();
+		this.plateCode = "ARM851";
+		this.plateType = "regular-plate";
+		this
+	}
+
+}

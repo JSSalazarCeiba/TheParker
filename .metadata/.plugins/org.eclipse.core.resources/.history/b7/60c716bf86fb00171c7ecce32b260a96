@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.ParkingLotManager;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import infrastructure.dao.ParkingLotDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotManagerImpl implements ParkingLotManager {
+	
+	public ParkingLotDao parkingLotDao;
+
+	@Override
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return parkingLotDao.getVehicle(vehicle);
+	}
+
+	@Override
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		return parkingLotDao.getVehicle(cell);
+	}
+
+}

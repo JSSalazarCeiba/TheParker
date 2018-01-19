@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package domain.task;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface FeeCalculatorTask {
+
+}

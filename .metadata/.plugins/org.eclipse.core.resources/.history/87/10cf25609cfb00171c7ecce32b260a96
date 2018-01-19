@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package web.service;
+
+import domain.model.Car;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantService {
+	
+	public void registerVehicleIn(Car car) {
+		
+	}
+
+}

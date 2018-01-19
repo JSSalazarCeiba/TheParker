@@ -1,0 +1,122 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import domain.manager.impl.VigilantManagerImpl;
+import domain.model.ParkingCell;
+import testDataBuilder.ParkingCellDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantManagerTest {
+	
+	private VigilantManager vigilantManager;
+	private VigilantManagerImpl vigilantManagerImpl;
+
+	/*
+	@Test
+	public void registerVehicleInCarTest() {
+		
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		// Act
+		vigilantManager.registerVehicleIn(car);
+		// Assert
+		fail("Not yet implemented");
+		
+	}*/
+	
+	/*
+	@Test
+	public void registerVehicleInMotorcycleTest() {
+		
+		// Arrange
+		Motorcycle motorcycle = new MotorcycleDataBuilder().build();
+		// Act
+		vigilantManager.registerVehicleIn(motorcycle);
+		// Assert
+		fail("Not yet implemented");
+		
+	}*/
+	
+	/*
+	 * @Test
+	public void registerVehicleOutTest() {
+		
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		// Act
+		vigilantManager.registerVehicleOut(car);
+		// Assert
+		fail("Not yet implemented");
+		
+	}*/
+	
+	/*
+	@Test
+	public void getAvailableParkingCellsTest() {
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		// Act
+		List<ParkingCell> parkingCells = vigilantManagerImpl.getAvailableParkingCells(car);
+		// Assert
+	}*/
+	
+	@Test
+	public void assignCellTest() {
+		// Arrange
+		ParkingCell cellC01 = new ParkingCellDataBuilder().build();
+		ParkingCell cellC07 = new ParkingCellDataBuilder().withCode("C07").build();
+		ParkingCell cellC15 = new ParkingCellDataBuilder().withCode("C15").build();
+		List<ParkingCell> parkingCells = new ArrayList<>();
+		parkingCells.add(cellC01);
+		parkingCells.add(cellC07);
+		parkingCells.add(cellC15);
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void setEntranceStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void setExitStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void updateCellStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void updateParkedVehiclesTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void updateVehicleOutTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+
+}

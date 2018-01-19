@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun domain.manager.DataValidatorTest.validatePlateLengthTest" project="TheParker" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="validatePlateLengthTest" classname="domain.manager.DataValidatorTest" time="26.887"/>
+</testrun>

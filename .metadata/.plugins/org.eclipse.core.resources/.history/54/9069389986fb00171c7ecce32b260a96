@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotManagerImpl {
+
+}

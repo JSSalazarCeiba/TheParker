@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+import domain.utility.Constants;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ResponseDataBuilder {
+	
+	private Integer code;
+	private String message;
+	/**
+	 * 
+	 */
+	public ResponseDataBuilder() {
+		super();
+		this.code = 200;
+		this.message = Constants.STATUS_OK_MESSAGE;
+	}
+	
+	public ResponseDataBuilder responseOkParkingLotFull() {
+		this.message = Constants.STATUS_ERROR_SERVER_MESSAGE;
+		return this;
+	}
+	
+	public ResponseDataBuilder responseErrorInServer() {
+		this.code = 500;
+		this.message = Constants.STATUS_ERROR_SERVER_MESSAGE;
+		return this;
+	}
+
+}

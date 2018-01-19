@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+import domain.model.Motorcycle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class MotorcycleDataBuilder {
+	
+	private String plate;
+	private String type;
+	private Integer cc;
+
+	public MotorcycleDataBuilder() {
+		super();
+		this.plate ="RSP74B";
+		this.type = "motorcycle";
+		this.cc = 125;
+	}
+	
+	public MotorcycleDataBuilder withCc(Integer cc) {
+		this.cc = cc;
+		return this;
+	}
+	
+	public Motorcycle build() {
+		return new Motorcycle(plate, plate, cc);
+	}
+
+}

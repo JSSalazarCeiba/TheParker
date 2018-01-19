@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class MotorcycleDataBuilder extends VehicleDataBuilder {
+	
+	private Integer cc;
+
+	public MotorcycleDataBuilder() {
+		super();
+	}
+	
+	
+
+}

@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Car extends Vehicle {
+
+	public Car(String plate, String type) {
+		super(plate, type);
+		// TODO Auto-generated constructor stub
+	}
+
+}

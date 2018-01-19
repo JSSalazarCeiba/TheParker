@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkedVehicle {
+	
+	private String idCell;
+	private String plate;
+	private String type;
+	private String time;
+	private Long chargedFee;
+	
+	public ParkedVehicle(String idCell, String plate, String type, String time, Long chargedFee) {
+		super();
+		this.idCell = idCell;
+		this.plate = plate;
+		this.type = type;
+		this.time = time;
+		this.chargedFee = chargedFee;
+	}
+
+}

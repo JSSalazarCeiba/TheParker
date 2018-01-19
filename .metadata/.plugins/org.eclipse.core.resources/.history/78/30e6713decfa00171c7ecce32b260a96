@@ -1,0 +1,143 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import domain.manager.VigilantManager;
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import domain.utility.Constants;
+import infrastructure.dao.ParkingLotDao;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantManagerImpl implements VigilantManager {
+	
+	private VigilantDao vigilantDao;
+	private ParkingLotDao parkingLotDao;
+	
+	/*
+	 * (non-Javadoc)
+	 * @see domain.manager.VigilantManager#registerVehicleIn(domain.model.Vehicle)
+	 * 
+	 * Vehicle entrance registration method:
+	 * 1. Determines if there are available cells
+	 * 2. Assigns a cell
+	 * 3. Opens the entrance door
+	 * 4. Registers the vehicle in the database
+	 * 5. Updates cell status
+	 */
+	@Override
+	public void registerVehicleIn(Vehicle vehicle) {
+		
+		// Get information about available cells
+		List<ParkingCell> availableCells = new ArrayList<>();
+		if (!availableCells.isEmpty()) {
+			
+			// Assign a cell and open the entrance and register vehicle in
+			ParkingCell assignedCell = assignCell(vehicle, availableCells);
+			setEntranceStatus(Constants.OPEN_ENTRANCE);
+			vigilantDao.registerVehicleIn(vehicle, assignedCell);
+			
+		} else {
+			// Show message, parking lot is full
+		}
+		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see domain.manager.VigilantManager#registerVehicleOut(domain.model.Vehicle)
+	 * 
+	 * Vehicle exit registration method:
+	 * 1. Updates cell status
+	 * 2. Updates parking vehicles
+	 * 3. Registers vehicle exit
+	 * 4. Opens the exit door
+	 */
+	@Override
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+		
+		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see domain.manager.VigilantManager#getVehicle(domain.model.Vehicle)
+	 * 
+	 * Get parked vehicle information by plate and type
+	 */
+	@Override
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return null;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see domain.manager.VigilantManager#getVehicle(domain.model.ParkingCell)
+	 * 
+	 * Get parked vehicle information by cell
+	 */
+	@Override
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		return null;
+	}
+	
+	/*
+	 * Method to get the list of available cells for the vehicle that 
+	 * wants to enter in the parking lot
+	 */
+	private List<ParkingCell> getAvailableParkingCells(Vehicle vehicle) {
+		return parkingLotDao.getAvailableParkingCells(vehicle);
+	}
+	
+	/*
+	 * Method that asign a cell to the vehicle
+	 */
+	private ParkingCell assignCell(Vehicle vehicle, List<ParkingCell> parkingCells) {
+		Random random = new Random();
+		Integer parkingCell = random.nextInt(Constants.CAR_CELLS);
+		return parkingCells.get(parkingCell);
+	}
+	
+	/*
+	 * Method that controls the opening and closing of the entrance
+	 */
+	private void setEntranceStatus(String entranceStatus) {
+		
+		if (entranceStatus.equals(Constants.OPEN_ENTRANCE)) {
+			
+		} else if (entranceStatus.equals(Constants.CLOSE_ENTRANCE)) {
+			
+		}
+		
+	}
+	
+	/*
+	 * Method that controls the opening and closing of the exit
+	 */
+	private void setExitStatus(String exitStatus) {
+		
+		if (exitStatus.equals(Constants.OPEN_EXIT)) {
+			
+		} else if (exitStatus.equals(Constants.CLOSE_EXIT)) {
+			
+		}
+		
+	}
+	
+	private void updateCellStatus(ParkedVehicle parkedVehicle) {
+		
+	}
+
+}

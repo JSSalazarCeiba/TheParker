@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Plate;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface DataValidatorManager {
+	
+	Plate validateVehicle(Vehicle vehicle);
+	
+	Plate validateVehicle(Car car);
+	
+	Plate validateVehicle(Motorcycle motorcycle);
+	
+	Plate validateParkingCell(ParkingCell cell);
+
+}

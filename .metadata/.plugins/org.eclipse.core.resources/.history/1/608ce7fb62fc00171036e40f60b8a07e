@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package infrastructure.driver;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Driver {
+
+}

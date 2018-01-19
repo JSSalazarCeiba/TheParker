@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Motorcycle;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface VigilantManager {
+	
+	void registerVehicleIn(Vehicle vehicle);
+	void registerVehicleIn(Motorcycle vehicle);
+	
+	void registerVehicleOut(Vehicle vehicle);
+	
+	ParkedVehicle getVehicle(Vehicle vehicle);
+	
+	ParkedVehicle getVehicle(ParkingCell cell);
+
+}

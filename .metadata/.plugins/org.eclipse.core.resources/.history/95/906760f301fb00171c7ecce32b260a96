@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VehicleDataBuilder {
+	
+	private String plate;
+	private String type;
+	
+	public VehicleDataBuilder() {
+		super();
+		this.plate = "MMQ835";
+		this.type = "car";
+	}
+	
+	
+
+}

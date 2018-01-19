@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Motorcycle extends Vehicle {
+	
+	private Long cc;
+
+	public Motorcycle(String plate, String type, Long cc) {
+		super(plate, type);
+		this.cc = cc;
+	}
+	
+	public Long getCc() {
+		return cc;
+	}
+
+	public void setCc(Long cc) {
+		this.cc = cc;
+	}
+
+}

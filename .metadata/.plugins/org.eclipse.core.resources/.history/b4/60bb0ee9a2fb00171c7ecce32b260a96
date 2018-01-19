@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import org.junit.Test;
+
+import domain.model.Vehicle;
+import testDataBuilder.VehicleDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotManagerTest {
+	
+	@Test
+	public void getVehicleByVehicleTest() {
+		// Arrange
+		Vehicle vehicle = new VehicleDataBuilder().build();
+		
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void getVehicleByCellTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+
+}

@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import domain.manager.impl.BillingManagerImpl;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillManagerTest {
+	
+	BillingManagerImpl billingManagerImpl;
+
+	@Test
+	public void generateBillTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void getParkingInfoTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void getVehicleRecordTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void createBillTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+
+}

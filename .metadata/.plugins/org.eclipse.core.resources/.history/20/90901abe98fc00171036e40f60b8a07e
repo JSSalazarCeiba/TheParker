@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import domain.model.VehicleRecord;
+import infrastructure.dao.FeeCalculatorTaskDao;
+
+/**
+ * Implementation of the class FeeCalculatorTaskDao
+ * @author juan.salazar
+ *
+ */
+@Repository
+public class FeeCalculatorTaskDaoImpl implements FeeCalculatorTaskDao {
+	
+	@Autowired
+	@PersistenceContext
+	EntityManager entityManager;
+	
+	/*
+	 * Get the list of the active parked vehicles in the parking lot
+	 * 
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.FeeCalculatorTaskDao#getActiveVehicleRecord()
+	 */
+	@Override
+	public List<VehicleRecord> getActiveVehicleRecord() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateParkingTimeAndFee(String timeToShow, Long fee, VehicleRecord record) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

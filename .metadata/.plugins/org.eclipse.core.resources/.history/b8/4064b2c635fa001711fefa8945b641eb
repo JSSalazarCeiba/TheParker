@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Vigilant {
+	
+	public String identifyVehicle() {
+		return null;
+	}
+	
+	public Integer getAvailability() {
+		return null;
+	}
+	
+	public Bill generatePayment() {
+		return null;
+	}
+
+}

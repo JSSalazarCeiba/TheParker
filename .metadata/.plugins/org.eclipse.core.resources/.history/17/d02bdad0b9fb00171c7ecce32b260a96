@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+import java.util.Date;
+
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VehicleRecordDataBuilder {
+	
+	private Long id;
+	private Vehicle vehicle;
+	private Integer cc;
+	private Date timeIn;
+	private Date timeOut;
+	private Long fee;
+	private Boolean active;
+	
+	public VehicleRecordDataBuilder() {
+		super();
+	}
+
+}

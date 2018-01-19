@@ -1,0 +1,20 @@
+package domain.model;
+
+import java.util.Date;
+
+public class Bill {
+	
+	private Vehicle vehicle;
+	private Date timeIn;
+	private Date timeOut;
+	private Long fee;
+	
+	public Bill(Vehicle vehicle, Date timeIn, Date timeOut, Long fee) {
+		super();
+		this.vehicle = vehicle;
+		this.timeIn = timeIn;
+		this.timeOut = timeOut;
+		this.fee = fee;
+	}
+
+}

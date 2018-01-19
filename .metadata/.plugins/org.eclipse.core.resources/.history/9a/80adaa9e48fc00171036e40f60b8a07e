@@ -1,0 +1,68 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.Date;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * Implementation of the interface VigilantDao
+ * @author juan.salazar
+ *
+ */
+public class VigilantDaoImpl implements VigilantDao {
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	/*
+	 * Method to create a record of cars that enter in the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleIn(domain.model.Car, domain.model.ParkingCell)
+	 */
+	@Override
+	public void registerVehicleIn(Car vehicle, ParkingCell parkingCell) {
+		
+	}
+	
+	/*
+	 * Method to create a record of motorcycles that enter in the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleIn(domain.model.Motorcycle, domain.model.ParkingCell)
+	 */
+	@Override
+	public void registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell) {
+		
+	}
+	
+	/*
+	 * Method to register when a vehicle leaves the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleOut(domain.model.Vehicle)
+	 */
+	@Override
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+	
+	/*
+	 * Method to update a vehicle's record when it is leaving the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#updateParkingRegistration(java.util.Date, java.lang.Long, java.lang.String)
+	 */
+	@Override
+	public void updateParkingRegistration(Date timeOut, Long fee, String active) {
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package domain.task;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface FeeCalculatorTask {
+	
+	String calculateParkingTime();
+	
+	Long calculateChargedFee();
+
+}

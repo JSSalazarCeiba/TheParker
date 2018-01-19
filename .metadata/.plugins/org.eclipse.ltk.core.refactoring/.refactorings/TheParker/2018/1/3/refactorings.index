@@ -1,0 +1,41 @@
+1516045944657	Delete element
+1516045947678	Delete element
+1516047404658	Delete element
+1516047416096	Delete element
+1516047485790	Delete element
+1516047622574	Copy package
+1516047630221	Delete element
+1516048045844	Delete elements
+1516048132976	Delete element
+1516049230512	Rename type 'Fee'
+1516050555060	Delete element
+1516051693903	Delete element
+1516052926165	Delete element
+1516113169863	Delete element
+1516115699069	Delete element
+1516126391349	Delete element
+1516126451457	Delete element
+1516126457007	Delete element
+1516126832061	Delete element
+1516133388332	Encapsulate field 'parkedTime'
+1516133731429	Rename type 'BillDao'
+1516133742347	Rename type 'BillDaoImpl'
+1516133762760	Rename type 'BillManager'
+1516133786109	Rename type 'BillManagerImpl'
+1516134926382	Delete element
+1516136911079	Delete element
+1516194092540	Rename type 'ParkingLotManager'
+1516194319038	Rename type 'DataValidator'
+1516194330549	Rename type 'DataValidatorImpl'
+1516194371055	Rename method 'validVehicle'
+1516200094649	Delete element
+1516200184393	Delete element
+1516200272821	Rename type 'DataValidatorDataBuilder'
+1516200417432	Delete element
+1516203341296	Rename package 'view'
+1516203737715	Delete element
+1516230837348	Delete element
+1516277670841	Rename method 'createBill'
+1516284831000	Encapsulate field 'id'
+1516307857982	Rename resource 'aplication.yml'
+1516363702763	Copy compilation unit

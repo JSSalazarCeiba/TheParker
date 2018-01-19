@@ -1,0 +1,23 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class CarDataBuilder extends VehicleDataBuilder {
+
+	/**
+	 * 
+	 */
+	public CarDataBuilder() {
+		super();
+	}
+	
+	public Car build() {
+		return new Car();
+	}
+
+}

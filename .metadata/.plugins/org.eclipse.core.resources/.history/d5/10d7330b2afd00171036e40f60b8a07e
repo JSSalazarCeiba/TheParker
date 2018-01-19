@@ -1,0 +1,186 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import domain.manager.impl.DataValidatorManagerImpl;
+import domain.manager.impl.VigilantManagerImpl;
+import domain.model.Car;
+import domain.model.ParkingCell;
+import domain.model.Response;
+import infrastructure.dao.ParkingLotDao;
+import infrastructure.dao.VigilantDao;
+import testDataBuilder.CarDataBuilder;
+import testDataBuilder.ParkingCellDataBuilder;
+import testDataBuilder.ResponseDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantManagerTest {
+	
+	@Mock
+	private VigilantManagerImpl vigilantManagerImpl;
+	
+	@Mock
+	private VigilantDao vigilantDao;
+	
+	@Mock
+	private ParkingLotDao parkingLotDao;
+	
+	@Before
+	public void setup() {
+
+		vigilantManagerImpl = new VigilantManagerImpl();
+		
+	}
+	
+	/* Nested mockito
+	@Test
+	public void registerVehicleInCarTest() {
+		
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		Response response = new ResponseDataBuilder().build();
+		// Act
+		Mockito.when(vigilantManager.registerVehicleIn(car)).thenReturn(response);
+		// Assert
+		assertEquals("Vehicle registration", response, vigilantManager.registerVehicleIn(car));
+		
+	}*/
+	
+	/*
+	@Test
+	public void registerVehicleInMotorcycleTest() {
+		
+		// Arrange
+		Motorcycle motorcycle = new MotorcycleDataBuilder().build();
+		// Act
+		vigilantManager.registerVehicleIn(motorcycle);
+		// Assert
+		fail("Not yet implemented");
+		
+	}*/
+	
+	/*
+	 * @Test
+	public void registerVehicleOutTest() {
+		
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		// Act
+		vigilantManager.registerVehicleOut(car);
+		// Assert
+		fail("Not yet implemented");
+		
+	}*/
+	
+	
+	@Test
+	public void getAvailableParkingCellsTest() {
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		ParkingCell cellC01 = new ParkingCellDataBuilder().build();
+		ParkingCell cellC07 = new ParkingCellDataBuilder().withCode("C07").build();
+		ParkingCell cellC15 = new ParkingCellDataBuilder().withCode("C15").build();
+		ParkingCell cellC16 = new ParkingCellDataBuilder().withCode("C16").build();
+		ParkingCell cellC19 = new ParkingCellDataBuilder().withCode("C19").build();
+		List<ParkingCell> availableCells = new ArrayList<>();
+		availableCells.add(cellC01);
+		availableCells.add(cellC07);
+		availableCells.add(cellC15);
+		availableCells.add(cellC16);
+		availableCells.add(cellC19);
+		// Act
+		Mockito.when(vigilantManagerImpl.getAvailableParkingCells(car)).thenReturn(availableCells);
+		// Assert
+		assertNotNull("Available parking cells", vigilantManagerImpl.getAvailableParkingCells(car));
+	}
+	
+	
+	@Test
+	public void assignCellTest() {
+		// Arrange
+		ParkingCell cellC01 = new ParkingCellDataBuilder().build();
+		ParkingCell cellC07 = new ParkingCellDataBuilder().withCode("C07").build();
+		ParkingCell cellC15 = new ParkingCellDataBuilder().withCode("C15").build();
+		ParkingCell cellC16 = new ParkingCellDataBuilder().withCode("C16").build();
+		ParkingCell cellC19 = new ParkingCellDataBuilder().withCode("C19").build();
+		List<ParkingCell> parkingCells = new ArrayList<>();
+		parkingCells.add(cellC01);
+		parkingCells.add(cellC07);
+		parkingCells.add(cellC15);
+		parkingCells.add(cellC16);
+		parkingCells.add(cellC19);
+		
+		// Act
+		ParkingCell assignedCell = vigilantManagerImpl.assignCell(parkingCells);
+		
+		// Assert
+		assertNotNull("Assigned cell null", assignedCell);
+	}
+	
+	/*
+	@Test
+	public void setEntranceStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}*/
+	
+	/*
+	@Test
+	public void setExitStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}*/
+	
+	/*
+	@Test
+	public void updateCellStatusTest() {
+		// Arrange
+		ParkedVehicle parkedVehicle = new ParkedVehicleDataBuilder().build();
+		
+		// Act
+		vigilantManagerImpl.updateCellStatus(parkedVehicle);
+		// Assert
+	}*/
+	
+	/*
+	@Test
+	public void updateParkedVehiclesTest() {
+		// Arrange
+		ParkedVehicle parkedVehicle = new ParkedVehicleDataBuilder().build();
+		
+		// Act
+		vigilantManagerImpl.updateParkedVehicles(parkedVehicle);
+		// Assert
+	}*/
+	
+	/*
+	@Test
+	public void updateVehicleOutTest() {
+		// Arrange
+		Long chargedFee = 5000L;
+		// Act
+		
+		vigilantManagerImpl.updateVehicleOut(chargedFee);
+		// Assert
+	}*/
+
+}

@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package web.service;
+
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotService {
+	
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return null;
+	}
+
+}

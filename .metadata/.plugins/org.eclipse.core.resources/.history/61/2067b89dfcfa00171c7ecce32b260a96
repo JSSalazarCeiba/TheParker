@@ -1,0 +1,49 @@
+/**
+ * 
+ */
+package domain.utility;
+
+/**
+ * Constants class
+ * @author juan.salazar
+ *
+ */
+public class Constants {
+	
+	// Entrance and exit gates
+	public static final String OPEN_ENTRANCE = "open-entrance";
+	public static final String CLOSE_ENTRANCE = "close-entrance";
+	public static final String OPEN_EXIT = "open-exit";
+	public static final String CLOSE_EXIT = "close-exit";
+	
+	// Vehicle types
+	public static final String CAR = "car";
+	public static final String MOTORCYCLE = "motorcycle";
+	
+	// Fare rates
+	public static final String HOUR_RATE = "hour-rate";
+	public static final String DAY_RATE = "day-rate";
+	public static final String MIXED_RATE = "mixed-rate";
+	
+	// Parking cell status descriptors
+	public static final String FREE = "FREE";
+	public static final String BUSY = "BUSY";
+	
+	// Parking vehicle parking status descriptors
+	public static final String ACTIVE = "S";
+	public static final String INACTIVE = "N";
+	
+	// Parking lot parameters
+	public static final Integer CAR_CELLS = 20;
+	public static final Integer MOTORCYCLE_CELLS = 10;
+	public static final Integer HOUR_FARE_CAR = 1000;
+	public static final Integer HOUR_FARE_MOTORCYCLE = 500;
+	public static final Integer DAY_FARE_CAR = 8000;
+	public static final Integer DAY_FARE_MOTORCYCLE = 4000;
+	public static final Integer EXTRA_FARE_HIGH_CC_MOTORCYCLE = 2000;
+	public static final Integer FARE_LIMIT_CC_MOTORCYCLE = 500;
+	public static final Integer HOURS_FARE_LIMIT = 9;
+	public static final Integer DAYS_FARE_LIMIT = 24;
+	public static final Integer HOURS_PER_MS = 1 / (1000 * 60 * 60);
+
+}

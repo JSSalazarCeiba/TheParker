@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package domain.model;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class Plate {
+	
+	private String plateCode;
+	private String type;
+	private Boolean valid;
+
+}

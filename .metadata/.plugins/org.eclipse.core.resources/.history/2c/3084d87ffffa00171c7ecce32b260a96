@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import java.util.Date;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface VigilantDao {
+	
+	void registerVehicleIn(Car vehicle, ParkingCell parkingCell);
+	void registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell);
+	void registerVehicleOut(Vehicle vehicle);
+	void updateParkingRegistration(Date timeOut, Long fee, String active);
+
+}

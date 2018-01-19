@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantManagerTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

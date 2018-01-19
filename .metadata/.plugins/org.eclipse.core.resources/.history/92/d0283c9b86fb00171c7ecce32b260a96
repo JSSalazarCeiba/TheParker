@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.ParkingLotManager;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotManagerImpl implements ParkingLotManager {
+
+}

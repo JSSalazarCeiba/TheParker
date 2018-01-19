@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package domain.model;
+
+import java.util.Date;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VehicleRecord {
+	
+	private Long id;
+	private String cc;
+	private Date timeIn;
+	private Date timeOut;
+	private Long fee;
+	private Boolean active;
+
+}

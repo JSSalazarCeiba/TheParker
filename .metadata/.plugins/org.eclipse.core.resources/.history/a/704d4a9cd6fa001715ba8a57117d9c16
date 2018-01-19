@@ -1,0 +1,89 @@
+/**
+ * 
+ */
+package domain.model;
+
+import java.util.Date;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VehicleRecord {
+	
+	private Long id;
+	private Vehicle vehicle;
+	private Long cc;
+	private Date timeIn;
+	private Date timeOut;
+	private Long fee;
+	private Boolean active;
+	
+	public VehicleRecord(Long id, Vehicle vehicle, Long cc, Date timeIn, Date timeOut, Long fee, Boolean active) {
+		super();
+		this.id = id;
+		this.vehicle = vehicle;
+		this.cc = cc;
+		this.timeIn = timeIn;
+		this.timeOut = timeOut;
+		this.fee = fee;
+		this.active = active;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getCc() {
+		return cc;
+	}
+
+	public void setCc(String cc) {
+		this.cc = cc;
+	}
+
+	public Date getTimeIn() {
+		return timeIn;
+	}
+
+	public void setTimeIn(Date timeIn) {
+		this.timeIn = timeIn;
+	}
+
+	public Date getTimeOut() {
+		return timeOut;
+	}
+
+	public void setTimeOut(Date timeOut) {
+		this.timeOut = timeOut;
+	}
+
+	public Long getFee() {
+		return fee;
+	}
+
+	public void setFee(Long fee) {
+		this.fee = fee;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+}

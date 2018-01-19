@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import domain.model.Car;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface VigilantDao {
+	
+	void registerVehicleIn(Car vehicle, ParkingCell parkingCell);
+	void registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell);
+	
+	void registerVehicleOut(Vehicle vehicle);
+
+}

@@ -1,0 +1,113 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.Date;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Response;
+import domain.model.VehicleRecord;
+import domain.utility.Constants;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * Implementation of the interface VigilantDao
+ * @author juan.salazar
+ *
+ */
+@Repository
+public class VigilantDaoImpl implements VigilantDao {
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	@Autowired
+	@PersistenceContext
+	EntityManager entityManager;
+	
+	/*
+	 * Method to create a record of cars that enter in the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleIn(domain.model.Car, domain.model.ParkingCell)
+	 */
+	@Override
+	public Response registerVehicleIn(Car vehicle, ParkingCell parkingCell) {
+		VehicleRecord record = new VehicleRecord(null, vehicle, null, null, null, null, null);
+		record.setVehicle(vehicle);
+		record.setTimeIn(new Date());
+		record.setActive("YES");
+		Response response;
+		try {
+			entityManager.persist(record);
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_MESSAGE);
+		} catch(Exception e) {
+			e.printStackTrace();
+			response = new Response(Constants.STATUS_ERROR_SERVER, Constants.STATUS_ERROR_SERVER_MESSAGE);
+		} finally {
+			entityManager.flush();
+		}
+		return response;
+	}
+	
+	/*
+	 * Method to create a record of motorcycles that enter in the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleIn(domain.model.Motorcycle, domain.model.ParkingCell)
+	 */
+	@Override
+	public Response registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell) {
+		VehicleRecord record = new VehicleRecord(null, vehicle, null, null, null, null, null);
+		record.setVehicle(vehicle);
+		record.setCc(vehicle.getCc());
+		record.setTimeIn(new Date());
+		record.setActive("YES");
+		Response response;
+		try {
+			entityManager.persist(record);
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_MESSAGE);
+		} catch(Exception e) {
+			e.printStackTrace();
+			response = new Response(Constants.STATUS_ERROR_SERVER, Constants.STATUS_ERROR_SERVER_MESSAGE);
+		} finally {
+			entityManager.flush();
+		}
+		return response;
+	}
+	
+	/*
+	 * Method to update a vehicle's record when it is leaving the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#updateParkingRegistration(java.util.Date, java.lang.Long, java.lang.String)
+	 */
+	@Override
+	public Response updateParkingRegistration(Date timeOut, ParkedVehicle parkedVehicle, String active) {
+		Query query = entityManager.createNativeQuery("UPDATE");
+		query.setParameter(1, timeOut);
+		query.setParameter(2, parkedVehicle.getChargedFee());
+		query.setParameter(3, active);
+		query.setParameter(4, parkedVehicle.getPlate());
+		Response response;
+		try {
+			query.executeUpdate();
+			response = new Response(Constants.STATUS_OK, Constants.STATUS_OK_MESSAGE);
+		} catch (Exception e) {
+			e.printStackTrace();
+			response = new Response(Constants.STATUS_ERROR_SERVER, Constants.STATUS_ERROR_SERVER_MESSAGE);
+		}
+		return response;
+		
+	}
+
+}

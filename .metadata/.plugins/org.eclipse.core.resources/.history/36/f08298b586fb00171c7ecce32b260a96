@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.ParkingLotManager;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingLotManagerImpl implements ParkingLotManager {
+
+	@Override
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

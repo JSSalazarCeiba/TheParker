@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package domain.manager;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface DataValidator {
+
+}

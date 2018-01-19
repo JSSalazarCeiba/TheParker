@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface DataValidatorManager {
+	
+	Boolean validateVehicle(Vehicle vehicle);
+	
+	Boolean validateVehicle(Car car);
+	
+	Boolean validateVehicle(Motorcycle motorcycle);
+	
+	Boolean validateParkingCell(ParkingCell cell);
+
+}

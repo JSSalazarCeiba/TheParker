@@ -1,0 +1,69 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.BillingManager;
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+import domain.model.VehicleRecord;
+import infrastructure.dao.BillingDao;
+import infrastructure.dao.ParkingLotDao;
+
+/**
+ * Implementation of the BillManager class
+ * @author juan.salazar
+ * 
+ */
+public class BillingManagerImpl implements BillingManager {
+	
+	ParkingLotDao parkingLotDao;
+	BillingDao billingDao;
+	
+	/*
+	 * Bill generation method>
+	 * 1. Get parked vehicle
+	 * 2. Get vehicle record
+	 * 3. Generate the bill
+	 */
+	@Override
+	public Bill generateBill(Vehicle vehicle) {
+		
+		// Get parking information to get time and debt
+		ParkedVehicle parkedVehicle = getParkingInfo(vehicle);
+		
+		// Get vehicle record
+		VehicleRecord vehicleRecord = getVehicleRecord(vehicle);
+		
+		// Generate the bill
+		return createBill(parkedVehicle, vehicleRecord);
+	}
+	
+	/***************************** PRIVATE ********************************/
+	
+	/*
+	 * Get the most important information about the parked vehicle
+	 */
+	public ParkedVehicle getParkingInfo(Vehicle vehicle) {
+		return parkingLotDao.getVehicle(vehicle);
+	}
+	
+	/*
+	 * Get the most important information about the vehicle's registration
+	 */
+	public VehicleRecord getVehicleRecord(Vehicle vehicle) {
+		return parkingLotDao.getVehicleRecord(vehicle);
+	}
+	
+	/*
+	 * Bill generation && registration method
+	 */
+	public Bill createBill(ParkedVehicle parkedVehicle, VehicleRecord record) {
+		Bill bill = new Bill(record.getVehicle(), record.getTimeIn(), 
+				record.getTimeOut(), parkedVehicle.getTime(), parkedVehicle.getChargedFee());
+		billingDao.createBill(bill);
+		return bill;
+	}
+
+}

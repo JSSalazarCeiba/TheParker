@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import domain.model.Bill;
+
+/**
+ * Class to handle database operations related with bills
+ * @author juan.salazar
+ *
+ */
+public interface BillingDao {
+	
+	void registerBill(Bill bill);
+
+}

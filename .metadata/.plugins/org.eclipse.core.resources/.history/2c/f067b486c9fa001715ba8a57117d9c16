@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.List;
+
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantDaoImpl implements VigilantDao {
+
+	@Override
+	public void registerVehicleIn(Vehicle vehicle, ParkingCell parkingCell) {
+		
+	}
+
+	@Override
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+
+	@Override
+	public ParkedVehicle getVehicle(Vehicle vehicle) {
+		return null;
+	}
+
+	@Override
+	public ParkedVehicle getVehicle(ParkingCell cell) {
+		return null;
+	}
+
+	@Override
+	public Bill generatePayment(Vehicle vehicle) {
+		return null;
+	}
+
+	@Override
+	public List<ParkingCell> getAvailableParkingCells(Vehicle vehicle) {
+		return null;
+	}
+
+}

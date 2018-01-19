@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package testDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class ParkingCellDataBuilder {
+	
+	private String id;
+	private String type;
+	private String status;
+	/**
+	 * 
+	 */
+	public ParkingCellDataBuilder() {
+		super();
+		this.id = "C1";
+		this.type = "CAR_CELL";
+		this.status = "FREE";
+	}
+
+}

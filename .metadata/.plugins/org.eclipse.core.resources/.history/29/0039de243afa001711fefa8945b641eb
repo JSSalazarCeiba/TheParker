@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+package domain.model;
+
+import java.util.Date;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VehicleRecord {
+	
+	private Long id;
+	private Vehicle vehicle;
+	private String cc;
+	private Date timeIn;
+	private Date timeOut;
+	private Long fee;
+	private Boolean active;
+	
+	public VehicleRecord(Long id, Vehicle vehicle, String cc, Date timeIn, Date timeOut, Long fee, Boolean active) {
+		super();
+		this.id = id;
+		this.vehicle = vehicle;
+		this.cc = cc;
+		this.timeIn = timeIn;
+		this.timeOut = timeOut;
+		this.fee = fee;
+		this.active = active;
+	}
+
+}

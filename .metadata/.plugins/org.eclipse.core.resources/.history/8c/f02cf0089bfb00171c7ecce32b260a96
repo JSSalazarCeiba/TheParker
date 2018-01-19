@@ -1,0 +1,228 @@
+/**
+ * 
+ */
+package domain.manager.impl;
+
+import domain.manager.DataValidatorManager;
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Plate;
+import domain.model.Vehicle;
+import domain.utility.Constants;
+
+/**
+ * Implementation of the DataValidatorManager interface
+ * @author juan.salazar
+ *
+ */
+public class DataValidatorManagerImpl implements DataValidatorManager {
+	
+	/*
+	 * Method to validate Car objects in 2 steps:
+	 * 1. Validate plate
+	 * 2. Validate type
+	 * (non-Javadoc)
+	 * @see domain.manager.DataValidatorManager#validateVehicle(domain.model.Car)
+	 */
+	@Override
+	public Plate validateVehicle(Car car) {
+		Plate carPlate;
+		String plate = car.getPlate();
+		String type = car.getType();
+		if (validatePlateNotNull(plate) && validateTypeNotNull(type)) {
+			String plateType = getPlateType(car);
+			if (!plateType.equals(Constants.INVALID_PLATE)) {
+				carPlate = new Plate(plate, plateType, true);
+			} else {
+				carPlate = new Plate(plate, plateType, false);
+			}
+		} else {
+			carPlate = new Plate(plate, Constants.INVALID_PLATE, false);
+		}
+		return carPlate;
+	}
+	
+	/*
+	 * Method to validate Motorcycle objects in 3 steps:
+	 * 1. Validate plate
+	 * 2. Validate type
+	 * 3. Validate cc
+	 * (non-Javadoc)
+	 * @see domain.manager.DataValidatorManager#validateVehicle(domain.model.Motorcycle)
+	 */
+	@Override
+	public Plate validateVehicle(Motorcycle motorcycle) {
+		Plate motorcyclePlate;
+		String plate = motorcycle.getPlate();
+		String type = motorcycle.getType();
+		Integer cc = motorcycle.getCc();
+		if (validatePlateNotNull(plate) && validateTypeNotNull(type) && validateCcNotNull(cc)) {
+			String plateType = getPlateType(motorcycle);
+			if (!plateType.equals(Constants.INVALID_PLATE)) {
+				motorcyclePlate = new Plate(plate, plateType, true);
+			} else {
+				motorcyclePlate = new Plate(plate, plateType, false);
+			}
+		} else {
+			motorcyclePlate = new Plate(plate, Constants.INVALID_PLATE, false);
+		}
+		return motorcyclePlate;
+	}
+	
+	/*
+	 * Method to validate ParkingCell objects in 3 steps:
+	 * 1. Validate cell code
+	 * 2. Validate cell type
+	 * 3. Validate cell status
+	 * (non-Javadoc)
+	 * @see domain.manager.DataValidatorManager#validateParkingCell(domain.model.ParkingCell)
+	 */
+	@Override
+	public Boolean validateParkingCell(ParkingCell cell) {
+		Boolean validCell;
+		if (validateCellCode(cell) && validateCellType(cell) && validateCellStatus(cell)) {
+			validCell = true;
+		} else {
+			validCell = false;
+		}
+		return validCell;
+	}
+	
+	/****************************** PRIVATE *************************************/
+	
+	/*
+	 * Method that validates the plate is not null or empty
+	 */
+	public Boolean validatePlateNotNull(String plate) {
+		Boolean validPlate;
+		if (plate != null && !plate.isEmpty()) {
+			validPlate = true;
+		} else {
+			validPlate = false;
+		}
+		return validPlate;
+	}
+	
+	/*
+	 * Method that validates the plate length is valid
+	 */
+	public Boolean validatePlateLength(String plate) {
+		Boolean validPlate;
+		if (plate.length() <= Constants.PLATE_MAX_LENGTH && 
+				plate.length() >= Constants.PLATE_MIN_LENGTH) {
+			validPlate = true;
+		} else {
+			validPlate = false;
+		}
+		return validPlate;
+	}
+	
+	/*
+	 * Method to get the plate type
+	 */
+	public String getPlateType(Car car) {
+		String type;
+		String plate = car.getPlate();
+		if (isRegularPlate(plate)) {
+			type = Constants.REGULAR_PLATE;
+		} else if (isDiplomaticPlate(plate)) {
+			type = Constants.DIPLOMATIC_PLATE;
+		} else if (isCargoPlate(plate)) {
+			type = Constants.CARGO_PLATE;
+		} else {
+			type = Constants.INVALID_PLATE;
+		}
+		return type;
+	}
+	
+	public String getPlateType(Motorcycle motorcycle) {
+		String type;
+		String plate = motorcycle.getPlate();
+		if (isMotorcyclePlate(plate)) {
+			type = Constants.MOTORCYCLE_PLATE;
+		} else {
+			type = Constants.INVALID_PLATE;
+		}
+		return type;
+	}
+	
+	public Boolean isRegularPlate(String plate) {
+		return plate.matches(Constants.REGEX_REGULAR_PLATE);
+	}
+	
+	public Boolean isDiplomaticPlate(String plate) {
+		return plate.matches(Constants.REGEX_DIPLOMATIC_PLATE);
+	}
+	
+	public Boolean isCargoPlate(String plate) {
+		return plate.matches(Constants.REGEX_CARGO_PLATE);
+	}
+	
+	public Boolean isMotorcyclePlate(String plate) {
+		return plate.matches(Constants.REGEX_MOTORCYCLE_PLATE);
+	}
+	
+	public Boolean validateTypeNotNull(String type) {
+		Boolean validType;
+		if (type != null && !type.isEmpty()) {
+			validType = true;
+		} else {
+			validType = false;
+		}
+		return validType;
+	}
+	
+	public Boolean validateCcNotNull(Integer cc) {
+		Boolean validCc;
+		if (cc!= null) {
+			validCc = true;
+		} else {
+			validCc = false;
+		}
+		return validCc;
+	}
+	
+	public Boolean validateCellCode(ParkingCell parkingCell) {
+		Boolean validCode = false;
+		String cellCode = parkingCell.getCode();
+		String cellType = parkingCell.getType();
+		if (cellType.equals(Constants.CAR_CELL)) {
+			validCode = validateCarCellCode(cellCode);
+		} else if (cellType.equals(Constants.MOTORCYCLE_CELL)) {
+			validCode = validateMotorcycleCellCode(cellCode);
+		}
+		return validCode;
+	}
+	
+	public Boolean validateCellType(ParkingCell parkingCell) {
+		Boolean validType;
+		String cellType = parkingCell.getType();
+		if (cellType.equals(Constants.CAR_CELL) || cellType.equals(Constants.MOTORCYCLE_CELL)) {
+			validType = true; 
+		} else {
+			validType = false;
+		}
+		return validType;
+	}
+	
+	public Boolean validateCellStatus(ParkingCell parkingCell) {
+		Boolean validStatus;
+		String cellStatus = parkingCell.getStatus();
+		if (cellStatus.equals(Constants.FREE) || cellStatus.equals(Constants.BUSY)) {
+			validStatus = true;
+		} else {
+			validStatus = false;
+		}
+		return validStatus;
+	}
+	
+	public Boolean validateCarCellCode(String cellCode) {
+		return cellCode.matches(Constants.REGEX_CAR_CELL);
+	}
+	
+	public Boolean validateMotorcycleCellCode(String cellCode) {
+		return cellCode.matches(Constants.REGEX_MOTORCYCLE_CELL);
+	}
+
+}

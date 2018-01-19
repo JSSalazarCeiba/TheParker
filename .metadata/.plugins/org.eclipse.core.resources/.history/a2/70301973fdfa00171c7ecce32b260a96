@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+import java.util.List;
+
+import domain.model.VehicleRecord;
+
+/**
+ * Interface that handles database operations triggered by the fee calculator task
+ * @author juan.salazar
+ *
+ */
+public interface FeeCalculatorTaskDao {
+	
+	List<VehicleRecord> getActiveVehicleRecord();
+
+}

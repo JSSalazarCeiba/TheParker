@@ -1,0 +1,98 @@
+/**
+ * 
+ */
+package infrastructure.dao.impl;
+
+import java.util.Date;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Vehicle;
+import domain.model.VehicleRecord;
+import infrastructure.dao.VigilantDao;
+
+/**
+ * Implementation of the interface VigilantDao
+ * @author juan.salazar
+ *
+ */
+@Repository
+public class VigilantDaoImpl implements VigilantDao {
+	
+	@Autowired
+	private DataSource dataSource;
+	
+	@Autowired
+	@PersistenceContext
+	EntityManager entityManager;
+	
+	/*
+	 * Method to create a record of cars that enter in the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleIn(domain.model.Car, domain.model.ParkingCell)
+	 */
+	@Override
+	public void registerVehicleIn(Car vehicle, ParkingCell parkingCell) {
+		VehicleRecord record = new VehicleRecord(null, vehicle, null, null, null, null, null);
+		record.setVehicle(vehicle);
+		record.setTimeIn(new Date());
+		record.setActive("YES");
+		try {
+			entityManager.persist(record);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			entityManager.flush();
+		}
+	}
+	
+	/*
+	 * Method to create a record of motorcycles that enter in the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleIn(domain.model.Motorcycle, domain.model.ParkingCell)
+	 */
+	@Override
+	public void registerVehicleIn(Motorcycle vehicle, ParkingCell parkingCell) {
+		VehicleRecord record = new VehicleRecord(null, vehicle, null, null, null, null, null);
+		record.setVehicle(vehicle);
+		record.setCc(vehicle.getCc());
+		record.setTimeIn(new Date());
+		record.setActive("YES");
+		try {
+			entityManager.persist(record);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			entityManager.flush();
+		}
+	}
+	
+	/*
+	 * Method to register when a vehicle leaves the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#registerVehicleOut(domain.model.Vehicle)
+	 */
+	@Override
+	public void registerVehicleOut(Vehicle vehicle) {
+		
+	}
+	
+	/*
+	 * Method to update a vehicle's record when it is leaving the parking lot
+	 * (non-Javadoc)
+	 * @see infrastructure.dao.VigilantDao#updateParkingRegistration(java.util.Date, java.lang.Long, java.lang.String)
+	 */
+	@Override
+	public void updateParkingRegistration(Date timeOut, Long fee, String active) {
+		
+	}
+
+}

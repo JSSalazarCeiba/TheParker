@@ -1,0 +1,65 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillManagerTest {
+
+	@Test
+	public void getAvailableParkingCellsTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void assignCellTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void setEntranceStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void setExitStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void updateCellStatusTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void updateParkedVehiclesTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void updateVehicleOutTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+
+}

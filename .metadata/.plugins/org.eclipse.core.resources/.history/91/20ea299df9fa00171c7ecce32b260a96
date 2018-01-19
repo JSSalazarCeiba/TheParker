@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package infrastructure.dao;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public interface BillDao {
+	
+	registerBill(Bill bill);
+
+}

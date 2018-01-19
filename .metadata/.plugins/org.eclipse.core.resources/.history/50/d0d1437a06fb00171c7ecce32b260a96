@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import testDataBuilder.CarDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class VigilantManagerTest {
+	
+	private Car car;
+	private Motorcycle motorcycle;
+
+	@Test
+	public void registerVehicleInTest() {
+		
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		// Act
+		
+		// Assert
+		fail("Not yet implemented");
+	}
+
+}

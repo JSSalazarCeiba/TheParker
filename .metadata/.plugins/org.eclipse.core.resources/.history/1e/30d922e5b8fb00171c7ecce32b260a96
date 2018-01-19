@@ -1,0 +1,70 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import domain.manager.impl.BillingManagerImpl;
+import domain.model.Bill;
+import domain.model.Car;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+import domain.model.VehicleRecord;
+import testDataBuilder.CarDataBuilder;
+import testDataBuilder.VehicleDataBuilder;
+
+/**
+ * @author juan.salazar
+ *
+ */
+public class BillManagerTest {
+	
+	BillingManagerImpl billingManagerImpl;
+
+	@Test
+	public void generateBillTest() {
+		// Arrange
+		Car car = new CarDataBuilder().build();
+		
+		// Act
+		Bill bill = billingManagerImpl.generateBill(car);
+		
+		// Assert
+		assertNotNull("Bill not null", bill);
+	}
+	
+	@Test
+	public void getParkingInfoTest() {
+		// Arrange
+		Vehicle vehicle = new VehicleDataBuilder().build();
+		
+		// Act
+		ParkedVehicle parkedVehicle = billingManagerImpl.getParkingInfo(vehicle);
+		
+		// Assert
+		assertNotNull("Parked vehicle info", parkedVehicle);
+	}
+	
+	@Test
+	public void getVehicleRecordTest() {
+		// Arrange
+		Vehicle vehicle = new VehicleDataBuilder().build();
+		
+		// Act
+		VehicleRecord vehicleRecord = billingManagerImpl.getVehicleRecord(vehicle);
+		
+		// Assert
+		assertNotNull("Vehicle record", vehicleRecord);
+	}
+	
+	@Test
+	public void createBillTest() {
+		// Arrange
+		// Act
+		// Assert
+	}
+
+}
