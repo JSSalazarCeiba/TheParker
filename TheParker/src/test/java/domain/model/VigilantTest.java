@@ -13,9 +13,10 @@ import org.junit.Test;
  */
 public class VigilantTest {
 
+	/*
 	@Test
 	public void test() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 }

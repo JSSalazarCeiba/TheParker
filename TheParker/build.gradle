@@ -78,3 +78,7 @@ test {
 	}
 	reports.junitXml.destination = file("jacoco/test-results")
 }
+
+springBoot {
+  mainClass = "TheParker"
+}

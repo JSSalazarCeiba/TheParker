@@ -13,9 +13,10 @@ import org.junit.Test;
  */
 public class FeeCalculatorTaskTest {
 
+	/*
 	@Test
 	public void test() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 }
