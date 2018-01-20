@@ -3,59 +3,42 @@
  */
 package domain.manager;
 
-import org.junit.Test;
+import org.junit.Before;
 import org.mockito.Mock;
 
-import domain.manager.impl.DataValidatorManagerImpl;
-import domain.manager.impl.ParkingLotManagerImpl;
-import domain.model.ParkedVehicle;
-import domain.model.ParkingCell;
-import domain.model.Vehicle;
-import testDataBuilder.ParkingCellDataBuilder;
-import testDataBuilder.VehicleDataBuilder;
-import static org.junit.Assert.assertNotNull;
-
-import org.junit.Before;
+import co.com.ceiba.theparker.domain.manager.impl.ParkingLotManagerImpl;
 
 /**
  * @author juan.salazar
  *
  */
 public class ParkingLotManagerTest {
-	
+
 	@Mock
 	ParkingLotManagerImpl parkingLotManagerImpl;
-	
+
 	@Before
 	public void setup() {
 		parkingLotManagerImpl = new ParkingLotManagerImpl();
 	}
-	
+
 	/*** MISING MOCKS ***/
-	
+
 	/*
-	@Test
-	public void getVehicleByVehicleTest() {
-		// Arrange
-		Vehicle vehicle = new VehicleDataBuilder().build();
-		
-		// Act
-		ParkedVehicle parkedVehicle = parkingLotManager.getVehicle(vehicle);
-		
-		// Assert
-		assertNotNull("Parked vehicle by plate null", parkedVehicle);
-	}
-	
-	@Test
-	public void getVehicleByCellTest() {
-		// Arrange
-		ParkingCell parkingCell = new ParkingCellDataBuilder().build();
-		
-		// Act
-		ParkedVehicle parkedVehicle = parkingLotManager.getVehicle(parkingCell);
-		
-		// Assert
-		assertNotNull("Parked vehicle by cell null", parkedVehicle);
-	}*/
+	 * @Test public void getVehicleByVehicleTest() { // Arrange Vehicle vehicle =
+	 * new VehicleDataBuilder().build();
+	 * 
+	 * // Act ParkedVehicle parkedVehicle = parkingLotManager.getVehicle(vehicle);
+	 * 
+	 * // Assert assertNotNull("Parked vehicle by plate null", parkedVehicle); }
+	 * 
+	 * @Test public void getVehicleByCellTest() { // Arrange ParkingCell parkingCell
+	 * = new ParkingCellDataBuilder().build();
+	 * 
+	 * // Act ParkedVehicle parkedVehicle =
+	 * parkingLotManager.getVehicle(parkingCell);
+	 * 
+	 * // Assert assertNotNull("Parked vehicle by cell null", parkedVehicle); }
+	 */
 
 }

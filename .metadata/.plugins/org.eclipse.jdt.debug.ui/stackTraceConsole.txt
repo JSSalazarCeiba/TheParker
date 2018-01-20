@@ -1,6 +1,6 @@
-java.lang.ExceptionInInitializerError
-	at domain.manager.impl.DataValidatorManagerImpl.validatePlateLength(DataValidatorManagerImpl.java:116)
-	at domain.manager.DataValidatorTest.validatePlateLengthTest(DataValidatorTest.java:93)
+java.lang.NullPointerException
+	at domain.manager.impl.VigilantManagerImpl.getAvailableParkingCells(VigilantManagerImpl.java:132)
+	at domain.manager.VigilantManagerTest.getAvailableParkingCellsTest(VigilantManagerTest.java:109)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -25,7 +25,4 @@ java.lang.ExceptionInInitializerError
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
-Caused by: java.lang.NullPointerException
-	at domain.utility.Constants.<clinit>(Constants.java:60)
-	... 26 more
 

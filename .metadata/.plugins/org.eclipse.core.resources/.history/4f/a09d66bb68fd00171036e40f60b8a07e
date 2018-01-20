@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Bill;
+import domain.model.ParkedVehicle;
+import domain.model.Vehicle;
+
+/**
+ * Class to handle billing when vehicles leave the parking lot
+ * @author juan.salazar
+ *
+ */
+public interface BillingManager {
+	
+	/**
+	 * Bill generator method
+	 * 
+	 * @param vehicle
+	 * @return
+	 */
+	Bill generateBill(Vehicle vehicle);
+
+}

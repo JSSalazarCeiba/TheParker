@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=TheParker/src\/main\/java&lt;domain.manager.impl{VigilantManagerImpl.java[VigilantManagerImpl" modifiers="1" timestamp="1516206913702"/>
-<typeInfo handle="=TheParker/src\/main\/java&lt;domain.task.impl{FeeCalculatorTaskImpl.java[FeeCalculatorTaskImpl" modifiers="1" timestamp="1516134610946"/>
-<typeInfo handle="=TheParker/src\/main\/java&lt;domain.model{Vigilant.java[Vigilant" modifiers="1" timestamp="1516193865478"/>
-<typeInfo handle="=TheParker/src\/main\/java&lt;domain.manager.impl{ParkingLotManagerImpl.java[ParkingLotManagerImpl" modifiers="1" timestamp="1516194180845"/>
-<typeInfo handle="=TheParker/src\/main\/java&lt;domain.manager.impl{DataValidatorManagerImpl.java[DataValidatorManagerImpl" modifiers="1" timestamp="1516204816465"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

@@ -47,3 +47,28 @@
 1516400591560	Move compilation unit
 1516400793365	Move compilation unit
 1516400832839	Rename package 'domain'
+1516401156579	Copy compilation units
+1516401166801	Copy compilation units
+1516401188294	Delete elements
+1516401192172	Copy compilation units
+1516401204705	Copy compilation units
+1516401298612	Copy compilation units
+1516401315841	Copy compilation unit
+1516401328697	Copy compilation unit
+1516401338946	Copy compilation units
+1516401372385	Delete element
+1516401388345	Delete element
+1516401476770	Copy compilation units
+1516401494588	Copy compilation units
+1516401523576	Copy compilation units
+1516401627060	Delete elements
+1516402050800	Delete element
+1516402057260	Delete element
+1516402198445	Rename resource 'application.properties'
+1516402261219	Delete element
+1516402585458	Rename resource 'application.yml'
+1516402593249	Rename resource 'application2.properties'
+1516402757021	Encapsulate field 'type'
+1516402763454	Encapsulate field 'plate'
+1516402837713	Encapsulate field 'plate'
+1516402841328	Encapsulate field 'type'

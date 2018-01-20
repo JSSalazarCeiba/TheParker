@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+package domain.manager;
+
+import domain.model.Car;
+import domain.model.Motorcycle;
+import domain.model.ParkingCell;
+import domain.model.Plate;
+import domain.model.Vehicle;
+
+/**
+ * Interface to handle backend object validation
+ * @author juan.salazar
+ *
+ */
+public interface DataValidatorManager {
+	
+	/**
+	 * Method to validate cars
+	 * @param car
+	 * @return
+	 */
+	Plate validateVehicle(Car car);
+	
+	/**
+	 * Method to validate motorcycles
+	 * @param motorcycle
+	 * @return
+	 */
+	Plate validateVehicle(Motorcycle motorcycle);
+	
+	/**
+	 * Method to validate parking cells
+	 * @param cell
+	 * @return
+	 */
+	Boolean validateParkingCell(ParkingCell cell);
+
+}

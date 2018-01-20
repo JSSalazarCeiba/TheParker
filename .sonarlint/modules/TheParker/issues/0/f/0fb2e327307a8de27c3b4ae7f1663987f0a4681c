@@ -1,7 +1,21 @@
 
-_squid:S11680"+Return an empty collection instead of null.(¥¹ï8“àòû,H¦RMAJORZ
+qsquid:UselessImportCheck"0Remove this unused import 'java.sql.Connection'.(¥ËôÖ8„ÁÔõ,HØRMINORZ
 CODE_SMELL
-½squid:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¥‰Õ×úÿÿÿÿ8Àçü…,HèRCRITICALZ
+osquid:UselessImportCheck"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8„ÁÔõ,HÛRMINORZ
 CODE_SMELL
-½squid:S1186M"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê”¾ùÿÿÿÿ8Àçü…,HéRCRITICALZ
+ssquid:UselessImportCheck"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8„ÁÔõ,HÚRMINORZ
+CODE_SMELL
+psquid:UselessImportCheck	"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8„ÁÔõ,HÜRMINORZ
+CODE_SMELL
+…squid:S11920"IDefine a constant instead of duplicating this literal "CONSULTA" 4 times.(­Ğ†×ûÿÿÿÿ8ò× ×,HÌRCRITICALZ
+CODE_SMELL
+zsquid:UselessImportCheck"9Remove this unused import 'infrastructure.driver.Driver'.(á°õ8„ÁÔõ,HÙRMINORZ
+CODE_SMELL
+ksquid:S1135ƒ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8‰¾Ù‚‘,H½RINFOZ
+CODE_SMELL
+ksquid:S1135‰"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8‰¾Ù‚‘,H¾RINFOZ
+CODE_SMELL
+`squid:S1168„"+Return an empty collection instead of null.(¥¹ï8‰¾Ù‚‘,H¿RMAJORZ
+CODE_SMELL
+`squid:S1168Š"+Return an empty collection instead of null.(¥¹ï8‰¾Ù‚‘,HÀRMAJORZ
 CODE_SMELL

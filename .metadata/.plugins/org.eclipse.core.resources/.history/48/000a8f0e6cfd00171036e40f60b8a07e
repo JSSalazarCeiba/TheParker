@@ -1,0 +1,4 @@
+SQL_LIB = MYSQL
+MYSQL_DB_URL = jdbc:mysql://localhost:3306/theparker
+MYSQL_DB_USERNAME = root
+MYSQL_DB_PASSWORD = admin

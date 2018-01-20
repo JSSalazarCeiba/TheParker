@@ -3,17 +3,20 @@
  */
 package domain.manager;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import domain.manager.impl.DataValidatorManagerImpl;
-import domain.model.Car;
-import domain.model.Motorcycle;
-import domain.model.ParkingCell;
-import domain.model.Plate;
-import domain.utility.Constants;
+import co.com.ceiba.theparker.domain.manager.impl.DataValidatorManagerImpl;
+import co.com.ceiba.theparker.domain.model.Car;
+import co.com.ceiba.theparker.domain.model.Motorcycle;
+import co.com.ceiba.theparker.domain.model.ParkingCell;
+import co.com.ceiba.theparker.domain.model.Plate;
+import co.com.ceiba.theparker.domain.utility.Constants;
 import testDataBuilder.CarDataBuilder;
 import testDataBuilder.MotorcycleDataBuilder;
 import testDataBuilder.ParkingCellDataBuilder;

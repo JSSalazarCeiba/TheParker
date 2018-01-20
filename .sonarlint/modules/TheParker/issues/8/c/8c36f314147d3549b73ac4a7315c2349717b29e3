@@ -1,5 +1,3 @@
 
-dsquid:S1172"+Remove this unused method parameter "cell".(³Φχώÿÿÿÿ8ο ¦,H RMAJORZ
-CODE_SMELL
-gsquid:S1172".Remove this unused method parameter "vehicle".(ΛΤ£ώÿÿÿÿ8¥ι¦,HRMAJORZ
-CODE_SMELL
+_squid:S1148,"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8ήλάΨ,HβRMINORZVULNERABILITY
+_squid:S1148!"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8¶©ΪΨ,HαRMINORZVULNERABILITY

@@ -3,8 +3,8 @@
  */
 package testDataBuilder;
 
-import domain.model.Response;
-import domain.utility.Constants;
+import co.com.ceiba.theparker.domain.model.Response;
+import co.com.ceiba.theparker.domain.utility.Constants;
 
 /**
  * @author juan.salazar
