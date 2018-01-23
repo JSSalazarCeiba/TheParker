@@ -52,14 +52,14 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	 * Method to get the list of vehicles currently parked 
 	 * in the parking lot
 	 */
-	public List<VehicleRecord> getActiveVehicleRecord() {
+	private List<VehicleRecord> getActiveVehicleRecord() {
 		return feeCalculatorTaskDao.getActiveVehicleRecord();
 	}
 	
 	/*
 	 * Method to get the parking time for each vehicle
 	 */
-	public Long findParkingTime(VehicleRecord record) {
+	private Long findParkingTime(VehicleRecord record) {
 		Date currentTime = new Date();
 		return currentTime.getTime() - record.getTimeIn().getTime();
 	}
@@ -67,14 +67,14 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to get the parking hours for each vehicle
 	 */
-	public Double findParkingHours(Long parkingTime) {
+	private Double findParkingHours(Long parkingTime) {
 		return (parkingTime * Constants.HOURS_PER_MS);
 	}
 	
 	/*
 	 * Method to get the parking time in human readable format
 	 */
-	public String findParkingTimeToShow(Double parkingHours) {
+	private String findParkingTimeToShow(Double parkingHours) {
 		Integer days = findDays(parkingHours);
 		Integer hours = findHours(parkingHours, days);
 		Integer minutes = findMinutes(parkingHours, days, hours);
@@ -84,21 +84,21 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to find the parking days
 	 */
-	public Integer findDays(Double parkingHours) {
+	private Integer findDays(Double parkingHours) {
 		return (int) (parkingHours/Constants.HOURS_PER_DAY);
 	}
 	
 	/*
 	 * Method to find the parking hours
 	 */
-	public Integer findHours(Double parkingHours, Integer days) {
+	private Integer findHours(Double parkingHours, Integer days) {
 		return (int) (parkingHours - (days * Constants.HOURS_PER_DAY));
 	}
 	
 	/*
 	 * Method to find the parking minutes
 	 */
-	public Integer findMinutes(Double parkingHours, Integer days, Integer hours) {
+	private Integer findMinutes(Double parkingHours, Integer days, Integer hours) {
 		return (int) ((parkingHours - hours - 
 				(days * Constants.HOURS_PER_DAY)) * Constants.MINUTES_PER_HOUR);
 	}
@@ -106,7 +106,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to get the fee depending on the parking hours
 	 */
-	public Long findFee(VehicleRecord record, Integer parkingHours) {
+	private Long findFee(VehicleRecord record, Integer parkingHours) {
 		Long fee = 0L;
 		if (parkingHours < Constants.HOURS_FARE_LIMIT) {
 			fee = findFeeByVehicleType(record, parkingHours, Constants.HOUR_RATE);
@@ -123,7 +123,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	 * Method to get the fee based on the vehicle type
 	 */
 	
-	public Long findFeeByVehicleType(VehicleRecord record, Integer parkingHours, String rate) {
+	private Long findFeeByVehicleType(VehicleRecord record, Integer parkingHours, String rate) {
 		Long fee = 0L;
 		String vehicleType = record.getType();
 		if (vehicleType.equals(Constants.CAR)) {
@@ -137,7 +137,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to get the fee for cars
 	 */
-	public Long findFeeCar(Integer parkingHours, String rate) {
+	private Long findFeeCar(Integer parkingHours, String rate) {
 		Long fee = 0L;
 		switch (rate) {
 		case Constants.HOUR_RATE:
@@ -158,7 +158,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to get the fee for motorcycles
 	 */
-	public Long findFeeMotorcycle(Integer parkingHours, String rate, Integer cc) {
+	private Long findFeeMotorcycle(Integer parkingHours, String rate, Integer cc) {
 		Long fee = 0L;
 		switch (rate) {
 		case Constants.HOUR_RATE:
@@ -182,7 +182,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to get complex fees for cars
 	 */
-	public Long findMixedFeeCar(Integer parkingHours) {
+	private Long findMixedFeeCar(Integer parkingHours) {
 		Long fee = 0L;
 		Integer days = findNumberOfDays(parkingHours);
 		Integer remainingHours = findRemainingHours(parkingHours, days);
@@ -198,7 +198,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to get complex fees for motorcycles
 	 */
-	public Long findMixedFeeMotorcycle(Integer parkingHours) {
+	private Long findMixedFeeMotorcycle(Integer parkingHours) {
 		Long fee = 0L;
 		Integer days = findNumberOfDays(parkingHours);
 		Integer remainingHours = findRemainingHours(parkingHours, days);
@@ -214,7 +214,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	/*
 	 * Method to find the number of days parked
 	 */
-	public Integer findNumberOfDays(Integer parkingHours) {
+	private Integer findNumberOfDays(Integer parkingHours) {
 		return parkingHours/Constants.DAYS_FARE_LIMIT;
 	}
 	
@@ -222,7 +222,7 @@ public class FeeCalculatorTaskImpl implements FeeCalculatorTask {
 	 * Method to find the number of remaining hours parked:
 	 * Discounting the days
 	 */
-	public Integer findRemainingHours(Integer parkingHours, Integer days) {
+	private Integer findRemainingHours(Integer parkingHours, Integer days) {
 		return parkingHours - (days * Constants.DAYS_FARE_LIMIT);
 	}
 	
