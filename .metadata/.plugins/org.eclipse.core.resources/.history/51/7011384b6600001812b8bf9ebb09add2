@@ -3,25 +3,10 @@
  */
 package domain.manager;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import co.com.ceiba.theparker.domain.manager.impl.ParkingLotManagerImpl;
-import co.com.ceiba.theparker.domain.model.ParkedVehicle;
-import co.com.ceiba.theparker.domain.model.ParkingCell;
-import co.com.ceiba.theparker.domain.model.Vehicle;
-import co.com.ceiba.theparker.infrastructure.dao.ParkingLotDao;
-import co.com.ceiba.theparker.infrastructure.dao.impl.ParkingLotDaoImpl;
-import testDataBuilder.ParkedVehicleDataBuilder;
-import testDataBuilder.ParkingCellDataBuilder;
-import testDataBuilder.VehicleDataBuilder;
 
 /**
  * @author juan.salazar
