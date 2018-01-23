@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +33,8 @@ import co.com.ceiba.theparker.infrastructure.dao.VigilantDao;
  */
 @Service
 public class VigilantManagerImpl implements VigilantManager {
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private VigilantDao vigilantDao;
@@ -166,9 +170,9 @@ public class VigilantManagerImpl implements VigilantManager {
 	 */
 	public void setEntranceStatus(String entranceStatus) {
 		if (entranceStatus.equals(Constants.OPEN_ENTRANCE)) {
-			// open the entrance gate
+			logger.info("Entrance gate opened");
 		} else if (entranceStatus.equals(Constants.CLOSE_ENTRANCE)) {
-			// close the entrance gate
+			logger.info("Entrance gate closed");
 		}
 	}
 
@@ -177,9 +181,9 @@ public class VigilantManagerImpl implements VigilantManager {
 	 */
 	public void setExitStatus(String exitStatus) {
 		if (exitStatus.equals(Constants.OPEN_EXIT)) {
-			// open the exit gate
+			logger.info("Exit gate opened");
 		} else if (exitStatus.equals(Constants.CLOSE_EXIT)) {
-			// close the exit gate
+			logger.info("Exit gate closed");
 		}
 	}
 
