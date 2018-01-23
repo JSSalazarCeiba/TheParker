@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="domain.manager.impl.BillingManagerImpl"/>
-<fullyQualifiedTypeName name="domain.model.Bill"/>
 <fullyQualifiedTypeName name="testDataBuilder.VehicleDataBuilder"/>
 <fullyQualifiedTypeName name="domain.model.Vehicle"/>
 <fullyQualifiedTypeName name="testDataBuilder.ParkedVehicleDataBuilder"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.utility.Queries"/>
 <fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.entity.VehicleRecordEntity"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 </qualifiedTypeNameHistroy>
