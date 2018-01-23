@@ -52,12 +52,12 @@
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 <fullyQualifiedTypeName name="domain.model.Response"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
-<fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.model.Response"/>
-<fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.utility.Constants"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.utility.Queries"/>
 <fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.entity.VehicleRecordEntity"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.utility.Constants"/>
+<fullyQualifiedTypeName name="co.com.ceiba.theparker.domain.model.Response"/>
 </qualifiedTypeNameHistroy>
